@@ -6,6 +6,7 @@ import HomePage from "./webpage/HomePage";
 import CreateSale from "./webpage/sales/CreateSale"
 import CreateAccount from "./webpage/auth/CreateAccount";
 import "./api/axiosDefault";
+import SignIn from "./webpage/auth/SignIn";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="createaccount" element={<CreateAccount />} />
         <Route exact path="createsale" element={<CreateSale />} />
+        <Route exact path="login" element={<SignIn />} />
       </Routes>
     </div>
   );
