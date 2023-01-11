@@ -8,11 +8,13 @@ const NavBar = () => {
     <>
       <Navbar bg="dark" variant="dark">
         <Container className={styles.all}>
-            <NavLink to="home">
+            <NavLink to="/">
           <Navbar.Brand>Navbar</Navbar.Brand>
           </NavLink>
           <Nav className="me-auto">
             <NavLink to="/">Home</NavLink>
+
+            <NavLink to="createsale"> Create a sale</NavLink>
           </Nav>
         </Container>
       </Navbar>
