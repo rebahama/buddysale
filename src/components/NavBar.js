@@ -1,12 +1,13 @@
 import React from 'react'
 
 import { Container, Nav, Navbar } from 'react-bootstrap'
+import styles from '../styles/NavBar.module.css'
 
 const NavBar = () => {
   return (
     <>
     <Navbar bg="dark" variant="dark">
-        <Container>
+        <Container className={styles.all}>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
