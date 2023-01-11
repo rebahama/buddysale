@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
-  )
-}
+    <div>
+      <NavLink to="createaccount"> click here </NavLink>
+    </div>
+  );
+};
 
-export default HomePage
+export default HomePage;
