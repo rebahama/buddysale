@@ -1,6 +1,5 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import NavBar from "./components/NavBar";
 import HomePage from "./webpage/HomePage";
 import CreateSale from "./webpage/sales/CreateSale"

@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
+import { useState } from "react";
 import { Alert, Button, Form } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
 
@@ -9,13 +10,12 @@ function CreateSale() {
     price: "",
     image: "",
     category: 1,
-    city: "",
+    city: 1,
   });
 
-  const imageInput = useRef(null);
-
-  const { title, content, price, image, category, city } = createSale;
+  const { title, content, price, image, category, city} = createSale;
   const [error, setError] = useState({});
+  const imageInput = useRef(null);
 
   const [categorySub] = useState({
     cars: 1,
@@ -32,30 +32,32 @@ function CreateSale() {
   };
 
   const handleImage = (event) => {
-    URL.revokeObjectURL(image);
     if (event.target.files.length) {
+      URL.revokeObjectURL(image);
       setSale({
         ...createSale,
-        import: URL.createObjectURL(event.target.files[0]),
+        image: URL.createObjectURL(event.target.files[0]),
       });
     }
   };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("image", imageInput.current.files[0]);
     formData.append("price", price);
-    formData.append("city", city);
+    formData.append("image", imageInput.current.files[0]);
     formData.append("category", category);
-
+    formData.append("city", city);
     try {
       const { data } = await axiosReq.post("/posts/", formData);
+      console.log(data);
     } catch (err) {
       if (err.response?.data !== 401) {
         setError(err.response?.data);
+        console.log(err.response)
       }
     }
   };
@@ -79,14 +81,6 @@ function CreateSale() {
           </Alert>
         ))}
 
-        <Form.Label> Image upload </Form.Label>
-       
-        {error?.image?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
-
         <Form.Group>
           <Form.Label> Body content </Form.Label>
           <Form.Control
@@ -103,11 +97,7 @@ function CreateSale() {
           </Alert>
         ))}
 
-        {error?.image?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+     
 
         <Form.Group>
           <Form.Label>Price</Form.Label>
@@ -127,6 +117,21 @@ function CreateSale() {
           </Alert>
         ))}
 
+<Form.Label> Image upload </Form.Label>
+        <input
+          type="file"
+          id="image-upload"
+          onChange={handleImage}
+          ref={imageInput}
+          accept="image/*"
+        ></input>
+        {error?.image?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+
+
         <Form.Group>
           <Form.Label>Category</Form.Label>
           <Form.Control
@@ -138,6 +143,24 @@ function CreateSale() {
             <option> </option>
             <option value={electronics}>Electronics </option>
             <option value={cars}>Cars</option>
+          </Form.Control>
+        </Form.Group>
+        {error?.category?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+
+        <Form.Group>
+          <Form.Label>City</Form.Label>
+          <Form.Control
+            as="select"
+            name="city"
+            value={city}
+            onChange={handleSale}
+          >
+            <option> </option>
+            <option value={city}> Stockholm </option>
           </Form.Control>
         </Form.Group>
         {error?.category?.map((message, idx) => (
