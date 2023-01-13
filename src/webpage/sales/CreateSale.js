@@ -9,13 +9,16 @@ function CreateSale() {
     content: "",
     price: "",
     image: "",
+    uploaded_images: [],
     category: 1,
     city: 1,
   });
 
-  const { title, content, price, image, category, city} = createSale;
+  const { title, content, price, image, category, city, uploaded_images } =
+    createSale;
   const [error, setError] = useState({});
   const imageInput = useRef(null);
+  const uploadedImage = useRef(null);
 
   const [categorySub] = useState({
     cars: 1,
@@ -41,6 +44,17 @@ function CreateSale() {
     }
   };
 
+  const handleUploadedImages = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(uploaded_images);
+      setSale({
+        ...createSale,
+        uploaded_images: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
+ 
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,6 +63,7 @@ function CreateSale() {
     formData.append("content", content);
     formData.append("price", price);
     formData.append("image", imageInput.current.files[0]);
+    formData.append("uploaded_images",uploadedImage.current.files[0]);
     formData.append("category", category);
     formData.append("city", city);
     try {
@@ -57,7 +72,7 @@ function CreateSale() {
     } catch (err) {
       if (err.response?.data !== 401) {
         setError(err.response?.data);
-        console.log(err.response)
+        console.log(err.response);
       }
     }
   };
@@ -97,8 +112,6 @@ function CreateSale() {
           </Alert>
         ))}
 
-     
-
         <Form.Group>
           <Form.Label>Price</Form.Label>
           <Form.Control
@@ -117,7 +130,7 @@ function CreateSale() {
           </Alert>
         ))}
 
-<Form.Label> Image upload </Form.Label>
+        <Form.Label> Image upload </Form.Label>
         <input
           type="file"
           id="image-upload"
@@ -131,6 +144,15 @@ function CreateSale() {
           </Alert>
         ))}
 
+        <Form.Label> multiple upload </Form.Label>
+        <input
+          type="file"
+          id="image-upload-multiple"
+          onChange={handleUploadedImages}
+          ref={uploadedImage}
+          multiple
+          accept="image/*"
+        ></input>
 
         <Form.Group>
           <Form.Label>Category</Form.Label>
