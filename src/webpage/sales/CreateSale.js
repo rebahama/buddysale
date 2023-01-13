@@ -46,15 +46,12 @@ function CreateSale() {
 
   const handleUploadedImages = (event) => {
     if (event.target.files.length) {
-      URL.revokeObjectURL(uploaded_images);
       setSale({
         ...createSale,
-        uploaded_images: URL.createObjectURL(event.target.files[0]),
+        uploaded_images: [...event.target.files],
       });
     }
   };
- 
-  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -63,7 +60,7 @@ function CreateSale() {
     formData.append("content", content);
     formData.append("price", price);
     formData.append("image", imageInput.current.files[0]);
-    formData.append("uploaded_images",uploadedImage.current.files[0]);
+    uploaded_images.forEach((file) => formData.append("uploaded_images", file));
     formData.append("category", category);
     formData.append("city", city);
     try {
