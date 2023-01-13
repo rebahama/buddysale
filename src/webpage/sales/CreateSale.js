@@ -46,6 +46,10 @@ function CreateSale() {
 
   const handleUploadedImages = (event) => {
     if (event.target.files.length) {
+      if (event.target.files.length > 3) {
+        alert("You can only upload 3 images");
+        return;
+      }
       setSale({
         ...createSale,
         uploaded_images: [...event.target.files],
@@ -55,6 +59,10 @@ function CreateSale() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (uploaded_images.length > 3) {
+      alert("You can only upload 3 images");
+      return;
+    }
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
