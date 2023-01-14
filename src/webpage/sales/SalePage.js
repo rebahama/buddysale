@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefault";
+import SaleProps from "./SalePros";
 
 const SalePage = () => {
   const [sale, setSale] = useState({
@@ -20,23 +21,19 @@ const SalePage = () => {
     };
     handleData();
   }, []);
+
   return (
     <div>
       <p> tst </p>
 
       {sale.results.length}
 
-      {sale.results.map((sales) => {
-        return (
-          <div key={sales.id}>
-            <p> {sales.owner}</p>
-
-            {sales.images.map((image, index) => (
-              <img key={index} src={image.image} alt="user uploads" />
-            ))}
-          </div>
-        );
+      {sale.results.map((sale) => {
+        return <SaleProps key={sale.id} {...sale} />;
       })}
+
+      
+
     </div>
   );
 };
