@@ -24,11 +24,13 @@ const DetaliedSale = () => {
     handleData();
   }, [id]);
 
-  return <div>testing
+  return (
+    <div>
+      {saleDetail.content}
 
-    {saleDetail.content}
-
-  </div>;
+      <SaleProps key={saleDetail.id} {...saleDetail} />
+    </div>
+  );
 };
 
 export default DetaliedSale;
