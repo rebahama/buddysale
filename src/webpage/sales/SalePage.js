@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefault";
-import SaleProps from "./SaleProps";
+import FilterProps from "./FilterProps";
 
 const SalePage = () => {
   const [sale, setSale] = useState({
@@ -25,9 +25,8 @@ const SalePage = () => {
   return (
     <div>
       total ads :{sale.results.length}
-
       {sale.results.map((sale) => {
-        return <SaleProps key={sale.id} {...sale} />;
+        return <FilterProps key={sale.id} {...sale} />;
       })}
     </div>
   );
