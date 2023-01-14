@@ -20,6 +20,8 @@ const NavBar = () => {
 
             <NavLink to="login"> Log in</NavLink>
 
+            <NavLink to="sales"> SaleAds </NavLink>
+
             {currentUser? <p> {currentUser?.username} </p>: currentUser?.username}
           </Nav>
         </Container>
