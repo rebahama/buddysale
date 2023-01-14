@@ -24,16 +24,11 @@ const SalePage = () => {
 
   return (
     <div>
-      <p> tst </p>
-
       {sale.results.length}
 
       {sale.results.map((sale) => {
         return <SaleProps key={sale.id} {...sale} />;
       })}
-
-      
-
     </div>
   );
 };
