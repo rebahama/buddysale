@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefault";
-import SaleProps from "./SalePros";
+import SaleProps from "./SaleProps";
 
 const SalePage = () => {
   const [sale, setSale] = useState({

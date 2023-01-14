@@ -8,12 +8,12 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   return (
     <>
-      <Navbar bg="danger" variant="dark" class={styles}>
+      <Navbar bg="danger" variant="dark" className={`${styles.Links}`}>
         <Container className={styles.all}>
           <NavLink to="/">
             <Navbar.Brand>Navbar</Navbar.Brand>
           </NavLink>
-          <Nav className="me-auto">
+          <Nav className="me-auto" >
             <NavLink to="/">Home</NavLink>
 
             <NavLink to="createsale"> Create a sale</NavLink>

@@ -18,6 +18,7 @@ function App() {
         <Route exact path="createsale" element={<CreateSale />} />
         <Route exact path="login" element={<SignIn />} />
         <Route exact path="sales" element={<SalePage />} />
+        <Route exact path="sales:id" element={<SalePage />}/>
       </Routes>
     </div>
   );
