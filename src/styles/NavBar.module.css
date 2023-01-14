@@ -1,0 +1,8 @@
+a{
+    margin: 15px;
+    text-decoration: none;
+    color: #f4f4f4;
+}
+a:hover{
+    color: aqua;
+}

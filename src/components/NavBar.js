@@ -8,10 +8,10 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   return (
     <>
-      <Navbar bg="light" variant="dark">
+      <Navbar bg="danger" variant="dark" class={styles}>
         <Container className={styles.all}>
-            <NavLink to="/">
-          <Navbar.Brand>Navbar</Navbar.Brand>
+          <NavLink to="/">
+            <Navbar.Brand>Navbar</Navbar.Brand>
           </NavLink>
           <Nav className="me-auto">
             <NavLink to="/">Home</NavLink>
@@ -22,7 +22,11 @@ const NavBar = () => {
 
             <NavLink to="sales"> SaleAds </NavLink>
 
-            {currentUser? <p> {currentUser?.username} </p>: currentUser?.username}
+            {currentUser ? (
+              <p> {currentUser?.username} </p>
+            ) : (
+              currentUser?.username
+            )}
           </Nav>
         </Container>
       </Navbar>

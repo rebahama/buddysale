@@ -24,7 +24,7 @@ const SalePage = () => {
 
   return (
     <div>
-      {sale.results.length}
+      total ads :{sale.results.length}
 
       {sale.results.map((sale) => {
         return <SaleProps key={sale.id} {...sale} />;
