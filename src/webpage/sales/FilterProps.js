@@ -37,7 +37,6 @@ const FilterProps = (props) => {
           <div className={styles.InfoContianer}>
             <p> Category: {category_name}</p>
             <p> Price: {price}</p>
-
             <Link to={`/sales/${id}`}>View more</Link>
           </div>
         </Col>
