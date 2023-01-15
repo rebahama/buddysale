@@ -2,8 +2,19 @@
     display: flex;
     border: 1px solid black;
     padding: 20px;
-    height: 300px;
+    height: 200px;
+    margin-top: 10px;
+    color: rgb(64, 64, 67)
 }
 .ImgContainer{
-    max-width: 50%;
+    max-width: 20%;
+    max-height: 50%;
+    border-radius: 50%;
+}
+.InfoContianer{
+    display: flex;
+    align-items: flex-end;
+}
+.FontColor{
+    color: rgb(67, 65, 64)
 }

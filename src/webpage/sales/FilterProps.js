@@ -21,17 +21,25 @@ const FilterProps = (props) => {
         {images?.splice(0, 1).map((image, index) => (
             <img key={index} src={image.image} alt="user uploads" className={styles.ImgContainer} />
           ))}
-          <p> ths is filter prop</p>
-          <p> {title}</p>
-          <p> {owner}</p>
+<p> {title}</p>
+<p> {city_name}</p>-
+<p> {created_at}</p>
+<p> {owner}</p>
+    <div className={styles.InfoContianer}> 
           
-          <p> {category_name}</p>
+          
+          
+          <p> {category_name}</p> 
           <p> {price}</p>
-          <p> {city_name}</p>
          
-          <p> {created_at}</p>
+         
+          
           <Link to={`/sales/${id}`}>View more</Link>
+          
+          </div>
+          
         </Col>
+        
       </Row>
     </Container>
   );
