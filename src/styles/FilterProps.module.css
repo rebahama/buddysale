@@ -1,9 +1,10 @@
 .FlexContainer{
     display: flex;
+    justify-content: space-around;
     background-color: white;
     padding: 20px;
     height: 200px;
-    margin-top: 10px;
+    margin-top: 20px;
     color: rgb(64, 64, 67);
     font-size: 19px;
     box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
@@ -26,4 +27,19 @@
 .DateSize {
     font-size: 15px;
     
+}
+.ViewBtn{
+    
+	font-weight: bold;
+	border: none;
+	color: #f4f4f4;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 2px 1px;
+	cursor: pointer;
+    border-radius: 10px;
+	background-color: #DC3545;
 }
