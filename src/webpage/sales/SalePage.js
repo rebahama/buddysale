@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
+import Loader from "../../components/Loader";
 import FilterProps from "./FilterProps";
 
 const SalePage = () => {
@@ -31,17 +32,13 @@ const SalePage = () => {
       total ads :{sale.results.length}
       {loaded ? (
         <>
-
           {sale.results.map((sale) => {
             return <FilterProps key={sale.id} {...sale} />;
           })}
         </>
       ) : (
-        <Spinner/>
+        <Loader />
       )}
-      {sale.results.map((sale) => {
-        return <FilterProps key={sale.id} {...sale} />;
-      })}
     </div>
   );
 };
