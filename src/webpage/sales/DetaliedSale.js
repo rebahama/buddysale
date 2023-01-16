@@ -26,7 +26,7 @@ const DetaliedSale = () => {
 
   return (
     <div>
-      {saleDetail.content}
+      
 
       <SaleProps key={saleDetail.id} {...saleDetail} />
     </div>
