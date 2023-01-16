@@ -12,42 +12,47 @@ const SaleProps = (props) => {
     title,
     created_at,
     id,
-    content
+    content,
   } = props;
 
   return (
     <div>
       <div>
-    
-          <Carousel>
-      <Carousel.Item>
-      {images?.slice(0,1).map((image, index) => (
-          <img key={index} src={image.image} alt="user uploads" />
-        ))}
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-      {images?.slice(1,2).map((image, index) => (
-          <img key={index} src={image.image} alt="user uploads"  />
-        ))}
+        <Carousel>
+          <Carousel.Item>
+            {images?.slice(0, 1).map((image, index) => (
+              <img key={index} src={image.image} alt="user uploads" />
+            ))}
+            <Carousel.Caption>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            {images?.slice(1, 2).map((image, index) => (
+              <img key={index} src={image.image} alt="user uploads" />
+            ))}
 
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-     
-    </Carousel>
+            <Carousel.Caption>
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+             
+            </Carousel.Caption>
+          </Carousel.Item>
+
+          <Carousel.Item>
+             {images?.slice(2, 3).map((image, index) => (
+              <img key={index} src={image.image} alt="user uploads" />
+            ))}
+          </Carousel.Item>
+        </Carousel>
         <p> {owner}</p>
         <p> {title}</p>
         <p> {category_name}</p>
         <p> {price}</p>
         <p> {city_name}</p>
         <p> {created_at}</p>
-        <Link to={`/sales/${id}`}>View more</Link>
+        {content}
       </div>
     </div>
   );
