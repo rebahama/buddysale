@@ -8,7 +8,7 @@ function CreateSale() {
     title: "",
     content: "",
     price: "",
-    image: "",
+    image:"",
     phone_number:"",
     email:"",
     uploaded_images: [],
@@ -16,7 +16,7 @@ function CreateSale() {
     city: 1,
   });
 
-  const { title, content, price, image, category, city, uploaded_images, email, phone_number } =
+  const { title, content, price, category, city, uploaded_images, email, phone_number,image } =
     createSale;
   const [error, setError] = useState({});
   const imageInput = useRef(null);
@@ -69,7 +69,6 @@ function CreateSale() {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("price", price);
-    formData.append("image", imageInput.current.files[0]);
     uploaded_images.forEach((file) => formData.append("uploaded_images", file));
     formData.append("category", category);
     formData.append("city", city);
@@ -134,20 +133,6 @@ function CreateSale() {
           />
         </Form.Group>
         {error?.price?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
-
-        <Form.Label> Image upload </Form.Label>
-        <input
-          type="file"
-          id="image-upload"
-          onChange={handleImage}
-          ref={imageInput}
-          accept="image/*"
-        ></input>
-        {error?.image?.map((message, idx) => (
           <Alert variant="warning" key={idx}>
             {message}
           </Alert>
