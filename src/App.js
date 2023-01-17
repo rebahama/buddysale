@@ -8,6 +8,7 @@ import "./api/axiosDefault";
 import SignIn from "./webpage/auth/SignIn";
 import SalePage from "./webpage/sales/SalePage";
 import DetaliedSale from "./webpage/sales/DetaliedSale";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="sales" element={<SalePage />} />
         <Route exact path="sales/:id" element={<DetaliedSale/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }

@@ -14,6 +14,8 @@ const SaleProps = (props) => {
     id,
     profile_image,
     content,
+    phone_number,
+    email,
   } = props;
 
   return (
@@ -84,6 +86,8 @@ const SaleProps = (props) => {
             <p> Category: {category_name}</p>
             <p> Price: {price}</p>
             <p> City: {city_name}</p>
+            <p> Email: {email}</p>
+            <p> Number: {phone_number}</p>
             <p> Created: {created_at}</p>
           </div>
           <hr className={styles.HrLine} />

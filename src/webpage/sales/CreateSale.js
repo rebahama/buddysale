@@ -9,12 +9,14 @@ function CreateSale() {
     content: "",
     price: "",
     image: "",
+    phone_number:"",
+    email:"",
     uploaded_images: [],
     category: 1,
     city: 1,
   });
 
-  const { title, content, price, image, category, city, uploaded_images } =
+  const { title, content, price, image, category, city, uploaded_images, email, phone_number } =
     createSale;
   const [error, setError] = useState({});
   const imageInput = useRef(null);
@@ -71,6 +73,8 @@ function CreateSale() {
     uploaded_images.forEach((file) => formData.append("uploaded_images", file));
     formData.append("category", category);
     formData.append("city", city);
+    formData.append("email", email);
+    formData.append("phone_number", phone_number);
     try {
       const { data } = await axiosReq.post("/posts/", formData);
       console.log(data);
@@ -195,6 +199,46 @@ function CreateSale() {
             {message}
           </Alert>
         ))}
+
+<Form.Group>
+          <Form.Label>Phone number</Form.Label>
+          
+        <Form.Group>
+          <Form.Label>Price</Form.Label>
+          <Form.Control
+            type="number"
+            placeholder="Enter phone"
+            name="phone_number"
+            value={phone_number}
+            onChange={handleSale}
+            min="0"
+            max="1000000"
+          />
+        </Form.Group>
+        </Form.Group>
+        {error?.phone_number?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+
+<Form.Group>
+          <Form.Label> Title </Form.Label>
+          <Form.Control
+            type="text"
+            name="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={handleSale}
+          />
+        </Form.Group>
+        {error?.email?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+
+        
 
         <Button variant="primary" type="submit">
           Create review

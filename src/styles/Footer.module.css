@@ -1,0 +1,17 @@
+.Footer {
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 100px;
+	margin-top: 15%;
+	background-color: #DC3545;
+
+}
+
+.Footer li {
+	padding: 20px;
+	
+}
+.Footer i:hover{
+	transition: all 0.5s ease-in-out 0.1s;
+}
