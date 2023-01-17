@@ -50,6 +50,7 @@ const SaleProps = (props) => {
         </Carousel>
         
         <Container>
+        <p> {title}</p>
         <hr className={styles.HrLine}/>
           <Row>
             <Col md={12}>
@@ -62,11 +63,13 @@ const SaleProps = (props) => {
         </Col>
         </Row>
         <hr className={styles.HrLine}/>
-        <p> {title}</p>
-        <p> {category_name}</p>
-        <p> {price}</p>
-        <p> {city_name}</p>
-        <p> {created_at}</p>
+        <div className={styles.FactContainer}>
+        <h3> Facts:</h3>
+        <p> Category: {category_name}</p>
+        <p> Price: {price}</p>
+        <p> City: {city_name}</p>
+        <p>  Created: {created_at}</p>
+        </div>
         {content}
         </Container>
       </div>

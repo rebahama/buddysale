@@ -17,3 +17,8 @@
 .HrLine {
 color: #DC3545;
 }
+.FactContainer{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
