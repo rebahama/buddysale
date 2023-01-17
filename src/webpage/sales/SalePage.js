@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
 import Loader from "../../components/Loader";
 import FilterProps from "./FilterProps";

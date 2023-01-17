@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import styles from "../../styles/SaleProps.module.css"
-import { Link } from "react-router-dom";
+
 
 const SaleProps = (props) => {
   const {
@@ -22,7 +22,7 @@ const SaleProps = (props) => {
         <Carousel>
           <Carousel.Item>
             {images?.slice(0, 1).map((image, index) => (
-              <img key={index} src={image.image} alt="user uploads"  className= {`${styles.CarouselImg}`} />
+              <img key={index} src={image.image} alt="user uploads"  className={styles.CarouselImg} />
             ))}
             <Carousel.Caption>
               <h3>First slide label</h3>
@@ -31,7 +31,7 @@ const SaleProps = (props) => {
           </Carousel.Item>
           <Carousel.Item>
             {images?.slice(1, 2).map((image, index) => (
-              <img key={index} src={image.image} alt="user uploads" />
+              <img key={index} src={image.image} alt="user uploads" className={styles.CarouselImg} />
             ))}
 
             <Carousel.Caption>
@@ -43,7 +43,7 @@ const SaleProps = (props) => {
 
           <Carousel.Item>
              {images?.slice(2, 3).map((image, index) => (
-              <img key={index} src={image.image} alt="user uploads" />
+              <img key={index} src={image.image} alt="user uploads" className= {styles.CarouselImg} />
             ))}
           </Carousel.Item>
         </Carousel>
