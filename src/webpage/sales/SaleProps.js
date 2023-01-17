@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Col, Container, Row } from "react-bootstrap";
 import styles from "../../styles/SaleProps.module.css"
 
 
@@ -13,6 +13,7 @@ const SaleProps = (props) => {
     title,
     created_at,
     id,
+    profile_image,
     content,
   } = props;
 
@@ -47,13 +48,27 @@ const SaleProps = (props) => {
             ))}
           </Carousel.Item>
         </Carousel>
-        <p> {owner}</p>
+        
+        <Container>
+        <hr className={styles.HrLine}/>
+          <Row>
+            <Col md={12}>
+          <div className={styles.profileInfo}>
+          <img src={profile_image} alt="user profile" className={styles.ProfileImage}/>
+        <p> Seller: {owner}</p>
+        <p> Member since: {created_at}</p>
+        
+        </div>
+        </Col>
+        </Row>
+        <hr className={styles.HrLine}/>
         <p> {title}</p>
         <p> {category_name}</p>
         <p> {price}</p>
         <p> {city_name}</p>
         <p> {created_at}</p>
         {content}
+        </Container>
       </div>
     </div>
   );

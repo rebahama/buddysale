@@ -2,3 +2,18 @@
     max-width: 70%;
     max-height: 500px;
 }
+.profileInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  
+}
+.ProfileImage{
+    border-radius: 50%;
+    max-width: 15%;
+}
+.HrLine {
+color: #DC3545;
+}
