@@ -18,37 +18,43 @@ const FilterProps = (props) => {
     <Container>
       <Row>
         <Col className={`${styles.FlexContainer} offset-md-3`} md={6}>
-        <div>
-          <span className={styles.DateSize}> {created_at}</span>
-          
-          <p className={styles.DateSize}> {city_name}</p>
-          {images?.length > 1 ?<>
-          
-           {images?.splice(0, 1).map((image, index) => (
-            <img
-              key={index}
-              src={image.image}
-              alt="user uploads"
-              className={styles.ImgContainer}
-            />
-          ))}</>:<>{images?.map((image, index) => (
-            <img
-              key={index}
-              src={image.image}
-              alt="user uploads"
-              className={styles.ImgContainer}
-            />
-          ))}</>}
+          <div>
+            <span className={styles.DateSize}> {created_at}</span>
 
-          
-        
-          <p> {title}</p>
+            <p className={styles.DateSize}> {city_name}</p>
+            {images?.length > 1 ? (
+              <>
+                {images?.splice(0, 1).map((image, index) => (
+                  <img
+                    key={index}
+                    src={image.image}
+                    alt="user uploads"
+                    className={styles.ImgContainer}
+                  />
+                ))}
+              </>
+            ) : (
+              <>
+                {images?.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image.image}
+                    alt="user uploads"
+                    className={styles.ImgContainer}
+                  />
+                ))}
+              </>
+            )}
+
+            <p> {title}</p>
           </div>
-          
+
           <div className={styles.InfoContianer}>
             <p> Category: {category_name}</p>
             <p> Price: {price}</p>
-            <Link to={`/sales/${id}`} className={styles.ViewBtn}>View more</Link>
+            <Link to={`/sales/${id}`} className={styles.ViewBtn}>
+              View more
+            </Link>
           </div>
         </Col>
       </Row>
