@@ -20,36 +20,45 @@ const SaleProps = (props) => {
 
   const renderImages = () => {
     if (images?.length > 2) {
-        return images.slice(0, 3).map((image, index) => (
-            <Carousel.Item key={index}>
-                <img src={image.image} alt="user uploads" className={styles.CarouselImg} />
-            </Carousel.Item>
-        ));
+      return images.slice(0, 3).map((image, index) => (
+        <Carousel.Item key={index}>
+          <img
+            src={image.image}
+            alt="user uploads"
+            className={styles.CarouselImg}
+          />
+        </Carousel.Item>
+      ));
     } else if (images?.length === 2) {
-        return images.map((image, index) => (
-            <Carousel.Item key={index}>
-                <img src={image.image} alt="user uploads" className={styles.CarouselImg} />
-            </Carousel.Item>
-        ));
+      return images.map((image, index) => (
+        <Carousel.Item key={index}>
+          <img
+            src={image.image}
+            alt="user uploads"
+            className={styles.CarouselImg}
+          />
+        </Carousel.Item>
+      ));
     } else if (images?.length === 1) {
-        return images.map((image, index) => (
-            <Carousel.Item key={index}>
-                <img src={image.image} alt="user uploads" className={styles.CarouselImg} />
-            </Carousel.Item>
-        ));
+      return images.map((image, index) => (
+        <Carousel.Item key={index}>
+          <img
+            src={image.image}
+            alt="user uploads"
+            className={styles.CarouselImg}
+          />
+        </Carousel.Item>
+      ));
     } else {
-        return <p> No images available</p>
+      return <p> No images available</p>;
     }
-}
+  };
 
   return (
     <div>
       <Container fluid>
         {images?.length}
-        <Carousel>
-
-          {renderImages()}
-        </Carousel>
+        <Carousel>{renderImages()}</Carousel>
       </Container>
 
       <Container>
