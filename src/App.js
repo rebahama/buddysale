@@ -24,7 +24,7 @@ function App() {
         <Route exact path="sales" element={<SalePage />} />
         <Route exact path="category" element={<Category />} />
         <Route exact path="sales/:id" element={<DetaliedSale/>}/>
-        <Route exact path="category/category/:id" element={<CategoryShow/>}/>
+        <Route exact path="category/:id" element={<CategoryShow/>}/>
       </Routes>
       <Footer/>
     </div>

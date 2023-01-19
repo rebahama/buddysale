@@ -32,7 +32,7 @@ const Category = () => {
       {categoryLinks.results.map((category) => {
         return (
           <div key={category.id}>
-            <Link key={category.id} to={`category/${category.id}`}>
+            <Link key={category.id} to={`${category.id}`}>
 
               {category.title}
             </Link>

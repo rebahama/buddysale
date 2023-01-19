@@ -28,7 +28,13 @@ const CategoryShow = () => {
 
   return (
     <div>
-      {category.results.length}
+      {category.results.slice(0, 1).map((category) => {
+        return (
+          <div key={category.id}>
+            <p>{category.category_name}</p>
+          </div>
+        );
+      })}
 
       {category.results.map((category) => {
         return <FilterProps key={category.id} {...category} />;
