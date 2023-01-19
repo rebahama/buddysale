@@ -22,14 +22,25 @@ const FilterProps = (props) => {
           <span className={styles.DateSize}> {created_at}</span>
           
           <p className={styles.DateSize}> {city_name}</p>
-          {images?.splice(0, 1).map((image, index) => (
+          {images?.length > 1 ?<>
+          
+           {images?.splice(0, 1).map((image, index) => (
             <img
               key={index}
               src={image.image}
               alt="user uploads"
               className={styles.ImgContainer}
             />
-          ))}
+          ))}</>:<>{images?.map((image, index) => (
+            <img
+              key={index}
+              src={image.image}
+              alt="user uploads"
+              className={styles.ImgContainer}
+            />
+          ))}</>}
+
+          
         
           <p> {title}</p>
           </div>
