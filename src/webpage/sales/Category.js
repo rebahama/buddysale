@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
-import FilterProps from "./FilterProps";
+import Loader from "../../components/Loader";
+
 const Category = () => {
+  const [loaded, loadedcomplete] = useState(false);
   const [category, setCategory] = useState({
     results: [],
   });
@@ -23,22 +25,32 @@ const Category = () => {
         setCategory(category);
         console.log(category);
         setCategoryLinks(categoryLinks);
+        loadedcomplete(true);
       } catch (err) {}
     };
+    loadedcomplete(false);
     handleData();
   }, []);
+
   return (
     <div>
-      {categoryLinks.results.map((category) => {
-        return (
-          <div key={category.id}>
-            <Link key={category.id} to={`${category.id}`}>
-
-              {category.title}
-            </Link>
-          </div>
-        );
-      })}
+      {loaded ? (
+        <>
+          
+          {categoryLinks.results.map((category) => {
+            return (
+              <div key={category.id}>
+                <Link key={category.id} to={`${category.id}`}>
+                  {category.title}
+                </Link>
+              </div>
+            );
+          })}
+          
+        </>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };
