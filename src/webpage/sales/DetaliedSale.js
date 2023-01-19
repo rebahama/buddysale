@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
+import Loader from "../../components/Loader";
 import SaleProps from "./SaleProps";
 
 const DetaliedSale = () => {
   const { id } = useParams();
+  const [loaded, loadedcomplete] = useState(false);
   const [saleDetail, setSaleDetail] = useState({
     results: [],
   });
@@ -16,19 +18,24 @@ const DetaliedSale = () => {
           `https://buddy-sale.herokuapp.com/posts/${id}`
         );
         setSaleDetail(data);
-        console.log(data.owner);
+        loadedcomplete(true);
       } catch (err) {
         console.log(err);
       }
     };
+    loadedcomplete(false);
     handleData();
   }, [id]);
 
   return (
     <div>
-      
-
-      <SaleProps key={saleDetail.id} {...saleDetail} />
+      {loaded ? (
+        <>
+          <SaleProps key={saleDetail.id} {...saleDetail} />
+        </>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };
