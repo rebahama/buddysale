@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
+import Loader from "../../components/Loader";
 import FilterProps from "./FilterProps";
 
 const CategoryShow = () => {
   const { id } = useParams();
+  const [loaded, loadedcomplete] = useState(false);
   const [category, setCategory] = useState({
     results: [],
   });
@@ -16,12 +18,14 @@ const CategoryShow = () => {
           `https://buddy-sale.herokuapp.com/posts/?category=${id}`
         );
         setCategory(data);
+        loadedcomplete(true);
 
         console.log(data);
       } catch (err) {
         console.log(err);
       }
     };
+    loadedcomplete(false);
 
     handleData();
   }, [id]);
@@ -35,10 +39,15 @@ const CategoryShow = () => {
           </div>
         );
       })}
-
-      {category.results.map((category) => {
-        return <FilterProps key={category.id} {...category} />;
-      })}
+      {loaded ? (
+        <>
+          {category.results.map((category) => {
+            return <FilterProps key={category.id} {...category} />;
+          })}
+        </>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };
