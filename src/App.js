@@ -10,6 +10,7 @@ import SalePage from "./webpage/sales/SalePage";
 import DetaliedSale from "./webpage/sales/DetaliedSale";
 import Footer from "./components/Footer";
 import Category from "./webpage/sales/Category";
+import CategoryShow from "./webpage/sales/CategoryShow";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="sales" element={<SalePage />} />
         <Route exact path="category" element={<Category />} />
         <Route exact path="sales/:id" element={<DetaliedSale/>}/>
+        <Route exact path="category/category/:id" element={<CategoryShow/>}/>
       </Routes>
       <Footer/>
     </div>

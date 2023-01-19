@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
 import FilterProps from "./FilterProps";
 const Category = () => {
@@ -31,18 +32,13 @@ const Category = () => {
       {categoryLinks.results.map((category) => {
         return (
           <div key={category.id}>
-            <p> {category.title}</p>
+            <Link key={category.id} to={`category/${category.id}`}>
+
+              {category.title}
+            </Link>
           </div>
         );
       })}
-
-{category.results.map((category)=>{
-
-return <FilterProps key={category.id} {...category}/>
-
-
-})}
-      
     </div>
   );
 };
