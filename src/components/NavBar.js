@@ -26,6 +26,7 @@ const NavBar = () => {
       <NavLink to="/" onClick={handleLogOut}>
         Log Out
       </NavLink>
+      <NavLink to="mysales"> My sales</NavLink>
     </>
   );
   const loggedOut = (

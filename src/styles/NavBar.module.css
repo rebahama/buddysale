@@ -1,8 +1,8 @@
-.Links a{
-    margin: 15px;
-    text-decoration: none;
-    color: #f4f4f4;
+.Links a {
+  margin: 15px;
+  text-decoration: none;
+  color: #f4f4f4;
 }
-.Links a:hover{
-    color: aqua;
+.Links a:hover {
+  color: aqua;
 }

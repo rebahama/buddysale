@@ -1,24 +1,23 @@
-.CarouselImg{
-    max-width: 70%;
-    max-height: 500px;
+.CarouselImg {
+  max-width: 70%;
+  max-height: 500px;
 }
-.profileInfo{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-  
+.profileInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
 }
-.ProfileImage{
-    border-radius: 50%;
-    max-width: 12%;
+.ProfileImage {
+  border-radius: 50%;
+  max-width: 12%;
 }
 .HrLine {
-color: #DC3545;
+  color: #dc3545;
 }
-.FactContainer{
-    display: flex;
-    align-items: baseline;
-    justify-content: space-around;
+.FactContainer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
 }

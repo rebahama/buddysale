@@ -11,11 +11,13 @@ import DetaliedSale from "./webpage/sales/DetaliedSale";
 import Footer from "./components/Footer";
 import Category from "./webpage/sales/Category";
 import CategoryShow from "./webpage/sales/CategoryShow";
+import MySales from "./webpage/sales/MySales";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      <div className="AppContainer">
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="createaccount" element={<CreateAccount />} />
@@ -25,7 +27,9 @@ function App() {
         <Route exact path="category" element={<Category />} />
         <Route exact path="sales/:id" element={<DetaliedSale/>}/>
         <Route exact path="category/:id" element={<CategoryShow/>}/>
+        <Route exact path="mysales" element={<MySales />} />
       </Routes>
+      </div>
       <Footer/>
     </div>
   );
