@@ -13,6 +13,7 @@ import Category from "./webpage/sales/Category";
 import CategoryShow from "./webpage/sales/CategoryShow";
 import MySales from "./webpage/sales/MySales";
 import CityFilter from "./webpage/sales/CityFilter";
+import FavoritesList from "./webpage/sales/FavoritesList";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="category/:id" element={<CategoryShow/>}/>
         <Route exact path="mysales" element={<MySales />} />
         <Route exact path="sales/citys" element={<CityFilter />} />
+        <Route exact path="favorites" element={<FavoritesList />} />
       </Routes>
       </div>
       <Footer/>

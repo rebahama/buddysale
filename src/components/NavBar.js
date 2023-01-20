@@ -27,6 +27,7 @@ const NavBar = () => {
         Log Out
       </NavLink>
       <NavLink to="mysales"> My sales</NavLink>
+      <NavLink to="favorites"> Saved ads </NavLink>
     </>
   );
   const loggedOut = (
