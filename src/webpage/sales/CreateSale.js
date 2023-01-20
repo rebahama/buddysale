@@ -8,16 +8,30 @@ function CreateSale() {
     title: "",
     content: "",
     price: "",
-    image:"",
-    phone_number:"",
-    email:"",
+    image: "",
+    phone_number: "",
+    email: "",
     uploaded_images: [],
     category: 1,
     city: 1,
   });
 
-  const { title, content, price, category, city, uploaded_images, email, phone_number,image } =
-    createSale;
+  const [citys] = useState({
+    stockholm: 1,
+    uppsala: 2,
+  });
+  const { uppsala, stockholm } = citys;
+  const {
+    title,
+    content,
+    price,
+    category,
+    city,
+    uploaded_images,
+    email,
+    phone_number,
+    image,
+  } = createSale;
   const [error, setError] = useState({});
   const imageInput = useRef(null);
   const uploadedImage = useRef(null);
@@ -176,7 +190,8 @@ function CreateSale() {
             onChange={handleSale}
           >
             <option> </option>
-            <option value={city}> Stockholm </option>
+            <option value={stockholm}> Stockholm </option>
+            <option value={uppsala}> Uppsala </option>
           </Form.Control>
         </Form.Group>
         {error?.category?.map((message, idx) => (
@@ -185,21 +200,21 @@ function CreateSale() {
           </Alert>
         ))}
 
-<Form.Group>
-          <Form.Label>Phone number</Form.Label>
-          
         <Form.Group>
-          <Form.Label>Price</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Enter phone"
-            name="phone_number"
-            value={phone_number}
-            onChange={handleSale}
-            min="0"
-            max="1000000"
-          />
-        </Form.Group>
+          <Form.Label>Phone number</Form.Label>
+
+          <Form.Group>
+            <Form.Label>Price</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Enter phone"
+              name="phone_number"
+              value={phone_number}
+              onChange={handleSale}
+              min="0"
+              max="1000000"
+            />
+          </Form.Group>
         </Form.Group>
         {error?.phone_number?.map((message, idx) => (
           <Alert variant="warning" key={idx}>
@@ -207,7 +222,7 @@ function CreateSale() {
           </Alert>
         ))}
 
-<Form.Group>
+        <Form.Group>
           <Form.Label> Title </Form.Label>
           <Form.Control
             type="text"
@@ -222,8 +237,6 @@ function CreateSale() {
             {message}
           </Alert>
         ))}
-
-        
 
         <Button variant="primary" type="submit">
           Create review
