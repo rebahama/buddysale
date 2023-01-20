@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Category from "./webpage/sales/Category";
 import CategoryShow from "./webpage/sales/CategoryShow";
 import MySales from "./webpage/sales/MySales";
+import CityFilter from "./webpage/sales/CityFilter";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="sales/:id" element={<DetaliedSale/>}/>
         <Route exact path="category/:id" element={<CategoryShow/>}/>
         <Route exact path="mysales" element={<MySales />} />
+        <Route exact path="sales/citys" element={<CityFilter />} />
       </Routes>
       </div>
       <Footer/>

@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
 import Loader from "../../components/Loader";
 import FilterProps from "./FilterProps";
 
-const SalePage = () => {
+const CityFilter = () => {
   const [sale, setSale] = useState({
     results: [],
   });
   const [loaded, loadedcomplete] = useState(false);
-  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const handleData = async () => {
       try {
         const { data } = await axiosReq.get(
-          `https://buddy-sale.herokuapp.com/posts/?search=${query}`
+          `https://buddy-sale.herokuapp.com/posts/?&city=${1}`
         );
         setSale(data);
         loadedcomplete(true);
@@ -27,15 +24,10 @@ const SalePage = () => {
     };
     loadedcomplete(false);
     handleData();
-  }, [query]);
+  }, []);
 
   return (
     <div>
-      total ads :{sale.results.length}
-      <Form onSubmit={(event) => event.preventDefault()}>
-            <Form.Control type="text"  placeholder= "Search a review" value={query} onChange={(event) => setQuery(event.target.value)}  />
-          </Form>
-          <Link to="citys"> sort by city</Link>
       {loaded ? (
         <>
           {sale.results.map((sale) => {
@@ -49,4 +41,4 @@ const SalePage = () => {
   );
 };
 
-export default SalePage;
+export default CityFilter;
