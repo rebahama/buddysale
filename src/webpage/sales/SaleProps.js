@@ -1,6 +1,8 @@
 import React from "react";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
 import styles from "../../styles/SaleProps.module.css";
+import {axiosRes} from '../../api/axiosDefault';
+import { Link } from "react-router-dom";
 
 const SaleProps = (props) => {
   const {
@@ -16,7 +18,29 @@ const SaleProps = (props) => {
     content,
     phone_number,
     email,
+    setSale,
+    favorite_id
   } = props;
+
+  const handleLikes = async () => {
+    try {
+      const { data } = await axiosRes.post("/favorites/", {
+        post: id,
+      });
+      setSale((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? {
+                ...post,
+                
+                favorite_id: data.id,
+              }
+            : post;
+        }),
+      }));
+    } catch (err) {}
+  };
 
   const renderImages = () => {
     if (images?.length > 2) {
@@ -100,6 +124,8 @@ const SaleProps = (props) => {
         sentence structures, to generate Lorem Ipsum which looks reasonable. The
         generated Lorem Ipsum is therefore always free from repetition, injected
         humour, or non-characteristic words etc.
+
+        <Link onClick={handleLikes}> Click here to save </Link>
       </Container>
     </div>
   );
