@@ -1,8 +1,9 @@
 import React from "react";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
 import styles from "../../styles/SaleProps.module.css";
-import {axiosRes} from '../../api/axiosDefault';
+import { axiosRes } from "../../api/axiosDefault";
 import { Link } from "react-router-dom";
+import ByUser from "./ByUser";
 
 const SaleProps = (props) => {
   const {
@@ -19,7 +20,8 @@ const SaleProps = (props) => {
     phone_number,
     email,
     setSale,
-    favorite_id
+    owner_name,
+    favorite_id,
   } = props;
 
   const handleLikes = async () => {
@@ -33,7 +35,7 @@ const SaleProps = (props) => {
           return post.id === id
             ? {
                 ...post,
-                
+
                 favorite_id: data.id,
               }
             : post;
@@ -96,7 +98,9 @@ const SaleProps = (props) => {
                 alt="user profile"
                 className={styles.ProfileImage}
               />
-              <p> Seller: {owner}</p>
+              <p> Seller: {owner_name}</p>
+              <Link to="byuser"> Click here see more from the user</Link>
+
               <p> Member since: {created_at}</p>
             </div>
           </Col>
@@ -124,8 +128,8 @@ const SaleProps = (props) => {
         sentence structures, to generate Lorem Ipsum which looks reasonable. The
         generated Lorem Ipsum is therefore always free from repetition, injected
         humour, or non-characteristic words etc.
-
         <Link onClick={handleLikes}> Click here to save </Link>
+        <ByUser owner={owner} />
       </Container>
     </div>
   );
