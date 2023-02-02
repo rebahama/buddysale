@@ -41,7 +41,32 @@ const SaleProps = (props) => {
             : post;
         }),
       }));
-    } catch (err) {}
+
+    } catch (err) {
+
+
+
+    }
+  };
+
+  const handleUnlike = async () => {
+    try {
+      await axiosRes.delete(`/favorites/${favorite_id}`);
+      setSale((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id ?
+            {
+              ...post,
+              
+              favorite_id: null
+            } :
+            post;
+        }),
+      }));
+
+    } catch (err) {
+    }
   };
 
   const renderImages = () => {
@@ -99,7 +124,6 @@ const SaleProps = (props) => {
                 className={styles.ProfileImage}
               />
               <p> Seller: {owner_name}</p>
-              <Link to="byuser"> Click here see more from the user</Link>
 
               <p> Member since: {created_at}</p>
             </div>
@@ -129,6 +153,9 @@ const SaleProps = (props) => {
         generated Lorem Ipsum is therefore always free from repetition, injected
         humour, or non-characteristic words etc.
         <Link onClick={handleLikes}> Click here to save </Link>
+
+        <Link onClick={handleUnlike}> Click here to remove </Link>
+        
         <ByUser owner={owner} />
       </Container>
     </div>
