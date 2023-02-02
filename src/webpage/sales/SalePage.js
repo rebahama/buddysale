@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import styles from "../../styles/SaleProps.module.css";
 import { Link } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
 import Loader from "../../components/Loader";
@@ -49,20 +50,17 @@ const SalePage = () => {
       <i className="fa fa-solid fa-sort" onClick={handleShow}></i>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title> Filter</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Link to="citys"> Filter by city</Link>
+          <Link to="citys" className={styles.LinkStyle}> <i className="fas fa-solid fa-city"> </i> <span> City </span> </Link>
           <p>
-            <Link to="category"> Filter by Category</Link>
+            <Link to="category" className={styles.LinkStyle}> <i className="fas fa-solid fa-bars">  </i> <span> Category </span> </Link>
           </p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>

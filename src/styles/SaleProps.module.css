@@ -31,3 +31,11 @@
 .FavoriteAd:hover{
   color: yellow;
 }
+.LinkStyle{
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+.LinkStyle:hover{
+  color: grey;
+}
