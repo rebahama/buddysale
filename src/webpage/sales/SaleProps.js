@@ -5,6 +5,7 @@ import { axiosRes } from "../../api/axiosDefault";
 import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ByUser from "./ByUser";
+import { useNavigate } from 'react-router-dom';
 
 const SaleProps = (props) => {
   const {
@@ -24,15 +25,17 @@ const SaleProps = (props) => {
     owner_name,
     favorite_id,
   } = props;
-
+  const navigate = useNavigate();
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner_name;
 
   const handleLikes = async () => {
     try {
       const { data } = await axiosRes.post("/favorites/", {
+        
         post: id,
       });
+      navigate(0);
       setSale((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -51,6 +54,7 @@ const SaleProps = (props) => {
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/favorites/${favorite_id}`);
+      navigate(0);
       setSale((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -141,7 +145,7 @@ const SaleProps = (props) => {
 
               <p> Member since: {created_at}</p>
 
-              {currentUser ? loggedinFavorite:"log in to like"}
+              {currentUser ? loggedinFavorite:"log in to save ad"}
             </div>
           </Col>
         </Row>

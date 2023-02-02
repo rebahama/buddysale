@@ -48,7 +48,7 @@ const NavBar = () => {
             {currentUser ? loggedIn : loggedOut}
 
             <NavLink to="sales"> <i className="fas fa-solid fa-money-bill"> SaleAds</i> </NavLink>
-            <NavLink to="category"> <i className="fas fa-solid fa-bars"> Category</i>  </NavLink>
+            <NavLink to="sales/category"> <i className="fas fa-solid fa-bars"> Category</i>  </NavLink>
 
             {currentUser ? (
               <p> {currentUser?.username} </p>

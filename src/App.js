@@ -27,9 +27,9 @@ function App() {
         <Route exact path="createsale" element={<CreateSale />} />
         <Route exact path="login" element={<SignIn />} />
         <Route exact path="sales" element={<SalePage />} />
-        <Route exact path="category" element={<Category />} />
+        <Route exact path="/sales/category" element={<Category />} />
         <Route exact path="sales/:id" element={<DetaliedSale/>}/>
-        <Route exact path="category/:id" element={<CategoryShow/>}/>
+        <Route exact path="sales/category/:id" element={<CategoryShow/>}/>
         <Route exact path="mysales" element={<MySales />} />
         <Route exact path="sales/citys" element={<CityFilter />} />
         <Route exact path="favorites" element={<FavoritesList />} />
