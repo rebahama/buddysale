@@ -22,18 +22,17 @@ const NavBar = () => {
 
   const loggedIn = (
     <>
-      <NavLink to="createsale"> Create a sale</NavLink>
-      <NavLink to="/" onClick={handleLogOut}>
-        Log Out
-      </NavLink>
+      <NavLink to="createsale"> <i className="fas fa-solid fa-plus"> </i> Create a sale</NavLink>
+      <NavLink to="/" onClick={handleLogOut}> <i className="fas fa-solid fa-arrow-right-from-bracket"> </i> Log out </NavLink>
+      
       <NavLink to="mysales"> My sales</NavLink>
-      <NavLink to="favorites"> Saved ads </NavLink>
+      <NavLink to="favorites"> <i className="fas fa-solid fa-star">  Saved ads </i> </NavLink>
     </>
   );
   const loggedOut = (
     <>
-      <NavLink to="login"> Log in</NavLink>
-      <NavLink to="createaccount"> Create account</NavLink>
+      <NavLink to="login"> <i className="fas fa-sign-in-alt"> Log in</i> </NavLink>
+      <NavLink to="createaccount"> <i className="fas fa-user-plus"> Create account</i> </NavLink>
     </>
   );
   const currentUser = useCurrentUser();
@@ -44,13 +43,12 @@ const NavBar = () => {
           <NavLink to="/">
             <Navbar.Brand>Navbar</Navbar.Brand>
           </NavLink>
-          <Nav className="me-auto">
-            <NavLink to="/">Home</NavLink>
+          <Nav className="me-auto"> <NavLink to="/"> <i className="fas fa-home"> Home</i> </NavLink>
 
             {currentUser ? loggedIn : loggedOut}
 
-            <NavLink to="sales"> SaleAds </NavLink>
-            <NavLink to="category"> Category </NavLink>
+            <NavLink to="sales"> <i className="fas fa-solid fa-money-bill"> SaleAds</i> </NavLink>
+            <NavLink to="category"> <i className="fas fa-solid fa-bars"> Category</i>  </NavLink>
 
             {currentUser ? (
               <p> {currentUser?.username} </p>

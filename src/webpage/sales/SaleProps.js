@@ -155,7 +155,7 @@ const SaleProps = (props) => {
         <Link onClick={handleLikes}> Click here to save </Link>
 
         <Link onClick={handleUnlike}> Click here to remove </Link>
-        
+       
         <ByUser owner={owner} />
       </Container>
     </div>
