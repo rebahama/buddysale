@@ -24,3 +24,10 @@
 .hideUserSales {
   display: none;
 }
+.FavoriteAd {
+  font-size: 20px;
+  cursor: pointer;
+}
+.FavoriteAd:hover{
+  color: yellow;
+}

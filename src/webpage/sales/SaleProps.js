@@ -3,6 +3,7 @@ import { Carousel, Col, Container, Row } from "react-bootstrap";
 import styles from "../../styles/SaleProps.module.css";
 import { axiosRes } from "../../api/axiosDefault";
 import { Link } from "react-router-dom";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ByUser from "./ByUser";
 
 const SaleProps = (props) => {
@@ -24,6 +25,9 @@ const SaleProps = (props) => {
     favorite_id,
   } = props;
 
+  const currentUser = useCurrentUser();
+  const is_owner = currentUser?.username === owner_name;
+
   const handleLikes = async () => {
     try {
       const { data } = await axiosRes.post("/favorites/", {
@@ -41,12 +45,7 @@ const SaleProps = (props) => {
             : post;
         }),
       }));
-
-    } catch (err) {
-
-
-
-    }
+    } catch (err) {}
   };
 
   const handleUnlike = async () => {
@@ -55,19 +54,34 @@ const SaleProps = (props) => {
       setSale((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
-          return post.id === id ?
-            {
-              ...post,
-              
-              favorite_id: null
-            } :
-            post;
+          return post.id === id
+            ? {
+                ...post,
+
+                favorite_id: null,
+              }
+            : post;
         }),
       }));
-
-    } catch (err) {
-    }
+    } catch (err) {}
   };
+
+  const loggedinFavorite = (
+    <>
+      {favorite_id ? (
+        <i
+          className={`fas fa-solid fa-trash ${styles.FavoriteAd}`}
+          onClick={handleUnlike}
+        ></i>
+      ) : (
+        <i
+          className={`fas fa-solid fa-star ${styles.FavoriteAd}`}
+          onClick={handleLikes}
+        >
+        </i>
+      )}
+    </>
+  );
 
   const renderImages = () => {
     if (images?.length > 2) {
@@ -126,6 +140,8 @@ const SaleProps = (props) => {
               <p> Seller: {owner_name}</p>
 
               <p> Member since: {created_at}</p>
+
+              {currentUser ? loggedinFavorite:"log in to like"}
             </div>
           </Col>
         </Row>
@@ -152,10 +168,6 @@ const SaleProps = (props) => {
         sentence structures, to generate Lorem Ipsum which looks reasonable. The
         generated Lorem Ipsum is therefore always free from repetition, injected
         humour, or non-characteristic words etc.
-        <Link onClick={handleLikes}> Click here to save </Link>
-
-        <Link onClick={handleUnlike}> Click here to remove </Link>
-       
         <ByUser owner={owner} />
       </Container>
     </div>
