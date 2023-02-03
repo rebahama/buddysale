@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "../styles/HomePage.module.css";
 import { Link, NavLink } from "react-router-dom";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import pic from "../assets/city.jpg";
+import { Button, Carousel, Col, Container, Row } from "react-bootstrap";
 
 const HomePage = () => {
   return (
@@ -20,6 +21,48 @@ const HomePage = () => {
         </Col>
       </Row>
 
+
+      <Row md={12} className={styles.SectionThree}>
+        
+        <div className={styles.carouselContainer}>
+        <h2  className={styles.IntroText}> Check out what our user thinks ouf us</h2>
+          <Col md={4}>
+            <Carousel fade>
+              <Carousel.Item>
+                <img className="d-block w-100" src={pic} alt="First slide" />
+                <Carousel.Caption>
+                  <h3>First slide label</h3>
+                  <p>
+                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img className="d-block w-100" src={pic} alt="Second slide" />
+
+                <Carousel.Caption>
+                  <h3>Second slide label</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img className="d-block w-100" src={pic} alt="Third slide" />
+
+                <Carousel.Caption>
+                  <h3>Third slide label</h3>
+                  <p>
+                    Praesent commodo cursus magna, vel scelerisque nisl
+                    consectetur.
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
+          </Col>
+        </div>
+      </Row>
+
       <Row md={12} className={styles.BlackBackground}>
         <Col>
           <div>
@@ -35,6 +78,7 @@ const HomePage = () => {
                 Fast <i className="fas fa-solid fa-forward"> </i>
               </li>
             </ul>
+            <hr className={styles.HrLine} />
           </div>
         </Col>
       </Row>
