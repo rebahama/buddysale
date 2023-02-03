@@ -2,17 +2,21 @@ import React from "react";
 import styles from "../styles/HomePage.module.css";
 import { Link, NavLink } from "react-router-dom";
 import pic from "../assets/good.jpg";
+import review from "../assets/review.jpg"
+import laptop from "../assets/laptop.jpg"
 import { Button, Carousel, Col, Container, Row } from "react-bootstrap";
 
 const HomePage = () => {
   return (
     <Container fluid>
-      <p> ssss </p>
+      
+      
       <Row md={12}>
         <Col className={styles.CityImage}>
           <h1 className={styles.IntroText}>
             Buddysale The fast way to start selling your item!
           </h1>
+          
 
           <h2 className={styles.IntroText}> Click here to create account </h2>
           <Link className={styles.IntroBtn} to="createaccount">
@@ -31,31 +35,33 @@ const HomePage = () => {
               <Carousel.Item>
                 <img className="d-block w-100" src={pic} alt="First slide" />
                 <Carousel.Caption>
-                  <h3>First slide label</h3>
+                  <h3>Rebas</h3>
+                  <p> Rating: 5/5</p>
                   <p>
-                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                   Really simple and fast to use
                   </p>
                 </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
-                <img className="d-block w-100" src={pic} alt="Second slide" />
+                <img className="d-block w-100" src={laptop} alt="Second slide" />
 
                 <Carousel.Caption>
-                  <h3>Second slide label</h3>
+                  <h3>Johndoe</h3>
+                  <p> 4/5</p>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    I love that you can filter based on a city
                   </p>
                 </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
-                <img className="d-block w-100" src={pic} alt="Third slide" />
+                <img className="d-block w-100" src={review} alt="Third slide" />
 
                 <Carousel.Caption>
-                  <h3>Third slide label</h3>
+                  <h3> Steve</h3>
                   <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur.
+                  5/5
                   </p>
+                  <p> Simply amazing, love that you can save an ad and review it later</p>
                 </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
