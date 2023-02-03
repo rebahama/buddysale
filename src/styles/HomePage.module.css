@@ -1,0 +1,41 @@
+.HeroImage {
+    max-width: 100%;
+    background-image: url('../assets/background.jpg');
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.CityImage {
+    max-width: 100%;
+    background-image: url('../assets/city.jpg');
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.BlackBackground {
+    background-color: black;
+    height: 600px;
+}
+.IntroText {
+    color: white;
+    font-weight: bold;
+}
+.IntroBtn{
+    background-color: #FF6B35;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.IntroBtn:hover{
+    background-color: red;
+    color: white;
+}
