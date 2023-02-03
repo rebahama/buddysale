@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
 import styles from "../../styles/SaleProps.module.css";
 import { axiosRes } from "../../api/axiosDefault";
 import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ByUser from "./ByUser";
-import { useNavigate } from 'react-router-dom';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { useNavigate } from "react-router-dom";
 
 const SaleProps = (props) => {
   const {
@@ -25,17 +27,21 @@ const SaleProps = (props) => {
     owner_name,
     favorite_id,
   } = props;
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
   const navigate = useNavigate();
   const currentUser = useCurrentUser();
+  const [message, setMessage] = useState("");
   const is_owner = currentUser?.username === owner_name;
 
   const handleLikes = async () => {
     try {
       const { data } = await axiosRes.post("/favorites/", {
-        
         post: id,
       });
-      navigate(0);
+      setMessage("Ad saved!");
+      setShow(true);
       setSale((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -50,11 +56,15 @@ const SaleProps = (props) => {
       }));
     } catch (err) {}
   };
+  const updatePage = () => {
+    navigate(0);
+  };
 
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/favorites/${favorite_id}`);
-      navigate(0);
+      setMessage("Successfully unsaved");
+      setShow(true);
       setSale((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -81,8 +91,7 @@ const SaleProps = (props) => {
         <i
           className={`fas fa-solid fa-star ${styles.FavoriteAd}`}
           onClick={handleLikes}
-        >
-        </i>
+        ></i>
       )}
     </>
   );
@@ -145,7 +154,17 @@ const SaleProps = (props) => {
 
               <p> Member since: {created_at}</p>
 
-              {currentUser ? loggedinFavorite:"log in to save ad"}
+              {currentUser ? loggedinFavorite : "log in to save ad"}
+
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body> {message}</Modal.Body>
+                <Modal.Footer>
+                  <Button onClick={updatePage}> Ok</Button>
+                </Modal.Footer>
+              </Modal>
             </div>
           </Col>
         </Row>
