@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/HomePage.module.css";
 import { Link, NavLink } from "react-router-dom";
-import pic from "../assets/city.jpg";
+import pic from "../assets/good.jpg";
 import { Button, Carousel, Col, Container, Row } from "react-bootstrap";
 
 const HomePage = () => {
