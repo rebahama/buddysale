@@ -6,12 +6,11 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 const HomePage = () => {
   return (
     <Container fluid>
+      <p> ssss </p>
       <Row md={12}>
         <Col className={styles.CityImage}>
-          <NavLink to="createaccount"> create account </NavLink>
           <h1 className={styles.IntroText}>
-
-            Welcome to this page and you can sell alot of stuff here
+            Buddysale The fast way to start selling your item!
           </h1>
 
           <h2 className={styles.IntroText}> Click here to create account </h2>
@@ -23,7 +22,20 @@ const HomePage = () => {
 
       <Row md={12} className={styles.BlackBackground}>
         <Col>
-          <NavLink to="createaccount"> create account </NavLink>
+          <div>
+            <ul>
+              <li className={styles.BlackBtn}>
+                Easy <i className="fas fa-solid fa-check"></i>
+              </li>
+              <li className={styles.BlackBtn}>
+                Free <i className="fas fa-solid fa-star"> </i>
+              </li>
+
+              <li className={styles.BlackBtn}>
+                Fast <i className="fas fa-solid fa-forward"> </i>
+              </li>
+            </ul>
+          </div>
         </Col>
       </Row>
     </Container>
