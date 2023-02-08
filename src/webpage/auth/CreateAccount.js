@@ -44,6 +44,7 @@ const CreateAccount = () => {
                   placeholder="Username"
                   value={username}
                   name="username"
+                  className={styles.InputLogIn}
                   onChange={handleChange}
                 />
               </Form.Group>
@@ -62,6 +63,7 @@ const CreateAccount = () => {
                   value={password1}
                   name="password1"
                   onChange={handleChange}
+                  className={styles.InputLogIn}
                 />
               </Form.Group>
               {error.password1?.map((message, idx) => (
@@ -78,6 +80,7 @@ const CreateAccount = () => {
                   value={password2}
                   name="password2"
                   onChange={handleChange}
+                  className={styles.InputLogIn}
                 />
               </Form.Group>
 
