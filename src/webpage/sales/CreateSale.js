@@ -44,9 +44,12 @@ function CreateSale() {
   const [categorySub] = useState({
     cars: 1,
     electronics: 2,
+    clothes: 3,
+    hobby: 4,
+    furniture: 5,
   });
 
-  const { cars, electronics } = categorySub;
+  const { cars, electronics, clothes, hobby, furniture } = categorySub;
 
   const handleSale = (event) => {
     setSale({
@@ -180,6 +183,9 @@ function CreateSale() {
             <option> </option>
             <option value={electronics}>Electronics </option>
             <option value={cars}>Cars</option>
+            <option value={clothes}> Clothes </option>
+            <option value={hobby}> Hobby </option>
+            <option value={furniture}> Furniture</option>
           </Form.Control>
         </Form.Group>
         {error?.category?.map((message, idx) => (
@@ -199,6 +205,7 @@ function CreateSale() {
             <option> </option>
             <option value={stockholm}> Stockholm </option>
             <option value={uppsala}> Uppsala </option>
+            
           </Form.Control>
         </Form.Group>
         {error?.category?.map((message, idx) => (
