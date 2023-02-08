@@ -1,9 +1,6 @@
 import React, { useRef } from "react";
 import { useState } from "react";
-import {
-  useCurrentUser,
-
-} from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Alert, Button, Form } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
 
@@ -95,7 +92,7 @@ function CreateSale() {
     formData.append("category", category);
     formData.append("city", city);
     formData.append("email", email);
-    formData.append("owner", currentUser.profile_id)
+    formData.append("owner", currentUser.profile_id);
     formData.append("phone_number", phone_number);
     try {
       const { data } = await axiosReq.post("/posts/", formData);
@@ -136,7 +133,6 @@ function CreateSale() {
             onChange={handleSale}
           ></Form.Control>
         </Form.Group>
-
 
         {error?.content?.map((message, idx) => (
           <Alert variant="warning" key={idx}>
@@ -205,7 +201,6 @@ function CreateSale() {
             <option> </option>
             <option value={stockholm}> Stockholm </option>
             <option value={uppsala}> Uppsala </option>
-            
           </Form.Control>
         </Form.Group>
         {error?.category?.map((message, idx) => (
