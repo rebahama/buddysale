@@ -1,6 +1,7 @@
 import axios from "axios";
+import styles from "../../styles/LogInPage.module.css"
 import React, { useState } from "react";
-import { Alert, Button, Form } from "react-bootstrap";
+import { Alert, Button, Container, Form, Col, Row } from "react-bootstrap";
 
 const CreateAccount = () => {
   const [signUp, setSignup] = useState({
@@ -24,66 +25,71 @@ const CreateAccount = () => {
     try {
       await axios.post("/dj-rest-auth/registration/", signUp);
     } catch (err) {
-      console.log(err)
+      console.log(err);
       setError(err.response?.data);
     }
   };
   return (
     <div>
-      <Form onSubmit={submitForm}>
-        <Form.Group className="mb-3" controlId="username">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Username"
-            value={username}
-            name="username"
-            onChange={handleChange}
-          />
-        </Form.Group>
+      <Container className={styles.CenterForm}>
+        <Row md={12}>
+          <Col md={12}>
+            <Form onSubmit={submitForm}>
+              <Form.Group className="mb-3" controlId="username">
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Username"
+                  value={username}
+                  name="username"
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-        {error.username?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+              {error.username?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Form.Group className="mb-3" controlId="password1">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            value={password1}
-            name="password1"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        {error.password1?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+              <Form.Group className="mb-3" controlId="password1">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  value={password1}
+                  name="password1"
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              {error.password1?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Form.Group className="mb-3" controlId="password2">
-          <Form.Label>Confirm password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Confirm password"
-            value={password2}
-            name="password2"
-            onChange={handleChange}
-          />
-        </Form.Group>
+              <Form.Group className="mb-3" controlId="password2">
+                <Form.Label>Confirm password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Confirm password"
+                  value={password2}
+                  name="password2"
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-        {error.password2?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            
-            {message}
-          </Alert>
-        ))}
+              {error.password2?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Button type="submit"> Create </Button>
-      </Form>
+              <Button type="submit"> Create </Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
