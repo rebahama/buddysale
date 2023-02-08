@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import styles from "../../styles/SaleProps.module.css";
 import { Link } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
@@ -39,15 +39,24 @@ const SalePage = () => {
   return (
     <div>
       total ads :{sale.results.length}
+      <Container>
+      <Row md={12}>
+        <Col>
       <Form onSubmit={(event) => event.preventDefault()}>
         <Form.Control
           type="text"
-          placeholder="Search a review"
+          placeholder="Search ad"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
+          className={styles.SearchBar}
         />
       </Form>
-      <i className="fa fa-solid fa-sort" onClick={handleShow}></i>
+      <i className={`fa fa-solid fa-sort ${styles.SymBolHover}`} onClick={handleShow}></i>
+      </Col>
+      </Row>
+      
+    </Container>
+      
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title> Filter</Modal.Title>
