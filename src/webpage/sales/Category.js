@@ -43,31 +43,31 @@ const Category = () => {
             <Row md={12}>
               <Col md={12}>
                 <Link to={`${categoryLinks.results[0].id}`}>
-                  <i className="fas fa-solid fa-couch"></i>{" "}
+                  <i className={` fas fa-solid fa-couch ${styles.Symbols}`}></i>
                 </Link>
                 <p className={styles.Letters}>
-                  {" "}
+                
                   {categoryLinks.results[0].title}
                 </p>
 
                 <Link to={`${categoryLinks.results[1].id}`}>
-                  <i className="fas fa-solid fa-futbol"></i>{" "}
+                <i className={` fas fa-solid fa-futbol ${styles.Symbols}`}></i>
                 </Link>
                 <p> {categoryLinks.results[1].title}</p>
 
                 <Link to={`${categoryLinks.results[2].id}`}>
-                  <i className="fas fa-solid fa-user-tie"></i>{" "}
+                <i className={` fas fa-solid fa-user-tie ${styles.Symbols}`}></i>
                 </Link>
                 <p> {categoryLinks.results[2].title}</p>
 
                 <Link to={`${categoryLinks.results[3].id}`}>
-                  <i className="fas fa-solid fa-laptop"></i>{" "}
+                <i className={` fas fa-solid fa-laptop ${styles.Symbols}`}></i>
                 </Link>
 
                 <p> {categoryLinks.results[3].title}</p>
 
                 <Link to={`${categoryLinks.results[4].id}`}>
-                  <i className="fas fa-solid fa-car"></i>
+                <i className={` fas fa-solid fa-car ${styles.Symbols}`}></i>
                 </Link>
                 <p> {categoryLinks.results[4].title}</p>
               </Col>
