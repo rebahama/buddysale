@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Alert, Button, Container, Form, Col, Row } from "react-bootstrap";
 
 const CreateAccount = () => {
+  const [message, setMessage] =useState("")
   const [signUp, setSignup] = useState({
     username: "",
     password1: "",
@@ -24,6 +25,7 @@ const CreateAccount = () => {
 
     try {
       await axios.post("/dj-rest-auth/registration/", signUp);
+      setMessage("Account created")
     } catch (err) {
       console.log(err);
       setError(err.response?.data);
@@ -85,7 +87,11 @@ const CreateAccount = () => {
                 </Alert>
               ))}
 
-              <Button type="submit"> Create </Button>
+              <Button type="submit"  className={styles.LoginBtn}> Create </Button>
+
+              <Alert variant="warning">
+                  {message}
+                </Alert>
             </Form>
           </Col>
         </Row>
