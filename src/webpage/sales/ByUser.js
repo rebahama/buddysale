@@ -22,7 +22,6 @@ const ByUser = (props) => {
         const datauser = data.results[0].owner;
         setSale(data);
         console.log(datauser);
-        console.log(id);
       } catch (err) {
         console.log(err);
       }
@@ -40,6 +39,14 @@ const ByUser = (props) => {
 
   btnShow?.addEventListener("click", myFunction);
 
+  
+
+  function showId (){
+    if(id===46){
+      console.log("hello")
+    }
+  }
+
   const categoryShow = () => {
     const getSale = document.getElementById("saleShow");
 
@@ -50,8 +57,11 @@ const ByUser = (props) => {
     }
   };
 
+  if(id)
+
   return (
     <div>
+      
       <Button onClick={categoryShow}> Show all sales from user</Button>
       <div id="saleShow" className={styles.hideUserSales}>
         {sale.results.map((sale) => {

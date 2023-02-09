@@ -1,6 +1,7 @@
 .FlexContainer {
   display: flex;
   justify-content: space-around;
+  border-radius: 20px;
   background-color: white;
   padding: 20px;
   height: 200px;

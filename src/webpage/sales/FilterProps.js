@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/FilterProps.module.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -14,6 +14,13 @@ const FilterProps = (props) => {
     created_at,
     id,
   } = props;
+
+  const [message, setMessage] = useState("");
+
+  const showId = () => {
+    return id ? setMessage("You are alredy on this ad") : console.log("false");
+  };
+
   return (
     <Container>
       <Row>
@@ -52,9 +59,15 @@ const FilterProps = (props) => {
           <div className={styles.InfoContianer}>
             <p> Category: {category_name}</p>
             <p> Price: {price}</p>
-            <Link to={`/sales/${id}`} className={styles.ViewBtn}>
+            <Link
+              to={`/sales/${id}`}
+              className={styles.ViewBtn}
+              onClick={showId}
+            >
               View more
+              
             </Link>
+            {message}
           </div>
         </Col>
       </Row>
