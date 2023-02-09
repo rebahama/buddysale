@@ -1,18 +1,26 @@
-.Container{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(246, 244, 243);
-    border-radius: 20px;
-    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
-    width: 50%;
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(246, 244, 243);
+  border-radius: 20px;
+  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
+  width: 50%;
 }
-.Symbols{
-    font-size: 30px;
-    background-color:white;
-    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
-    border-radius: 25px;
-    padding: 10px;
+.Symbols {
+  font-size: 30px;
+  background-color: white;
+  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
+  border-radius: 25px;
+  padding: 10px;
+}
+.HeadingStyle {
+  color: #000000;
+  position: relative;
+  bottom: 60%;
+  width: 100%;
+  font-size: 50px;
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 90%);
 }

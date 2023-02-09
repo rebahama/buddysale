@@ -36,7 +36,7 @@ function App() {
         <Route exact path="sales/:id/byuser" element={<ByUser />} />
       </Routes>
       </div>
-      <Footer/>
+      
     </div>
   );
 }

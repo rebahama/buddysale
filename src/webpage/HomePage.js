@@ -5,6 +5,7 @@ import pic from "../assets/good.jpg";
 import review from "../assets/review.jpg"
 import laptop from "../assets/laptop.jpg"
 import { Button, Carousel, Col, Container, Row } from "react-bootstrap";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -87,8 +88,11 @@ const HomePage = () => {
             <hr className={styles.HrLine} />
           </div>
         </Col>
+        
       </Row>
+      
     </Container>
+    
   );
 };
 

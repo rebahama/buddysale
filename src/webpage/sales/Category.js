@@ -36,7 +36,7 @@ const Category = () => {
 
   return (
     <div>
-      <h3> Category</h3>
+      <h3 className={styles.HeadingStyle}> Category</h3>
       {loaded ? (
         <>
           <Container className={styles.Container}>

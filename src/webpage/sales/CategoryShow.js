@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
 import Loader from "../../components/Loader";
+import styles from "../../styles/CategoryPage.module.css";
 import FilterProps from "./FilterProps";
 
 const CategoryShow = () => {
@@ -35,7 +36,7 @@ const CategoryShow = () => {
       {category.results.slice(0, 1).map((category) => {
         return (
           <div key={category.id}>
-            <p>{category.category_name}</p>
+            <h3 className={styles.HeadingStyle }>{category.category_name}</h3>
           </div>
         );
       })}
