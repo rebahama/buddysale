@@ -7,7 +7,7 @@
   height: 200px;
   margin-top: 20px;
   color: rgb(64, 64, 67);
-  font-size: 19px;
+  font-size: 16px;
   box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
 }
 .ImgContainer {
@@ -51,3 +51,4 @@
 .ViewBtn:hover {
   color: aqua;
 }
+

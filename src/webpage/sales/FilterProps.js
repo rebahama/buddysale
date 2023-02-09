@@ -18,7 +18,7 @@ const FilterProps = (props) => {
   const [message, setMessage] = useState("");
 
   const showId = () => {
-    return id ? setMessage("You are alredy on this ad") : console.log("false");
+    return id ? setMessage("You are already on this ad") : console.log("false");
   };
 
   return (
@@ -67,8 +67,9 @@ const FilterProps = (props) => {
               View more
               
             </Link>
-            {message}
+            <p>{message}</p>
           </div>
+         
         </Col>
       </Row>
     </Container>

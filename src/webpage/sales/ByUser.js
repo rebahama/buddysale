@@ -40,13 +40,6 @@ const ByUser = (props) => {
   btnShow?.addEventListener("click", myFunction);
 
   
-
-  function showId (){
-    if(id===46){
-      console.log("hello")
-    }
-  }
-
   const categoryShow = () => {
     const getSale = document.getElementById("saleShow");
 
@@ -57,7 +50,7 @@ const ByUser = (props) => {
     }
   };
 
-  if(id)
+
 
   return (
     <div>
