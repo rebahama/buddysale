@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const FilterProps = (props) => {
   const {
-    owner,
     images,
     category_name,
     city_name,

@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import styles from "../../styles/SaleProps.module.css";
 import { axiosReq } from "../../api/axiosDefault";
 import FilterProps from "./FilterProps";
-import { Button } from "react-bootstrap";
 
 const ByUser = (props) => {
-  const { id } = useParams();
   const { owner } = props;
 
   const [sale, setSale] = useState({
@@ -27,7 +24,7 @@ const ByUser = (props) => {
       }
     };
     handleData();
-  }, []);
+  }, [owner]);
 
   let btnShow = document.getElementById("showAll");
 

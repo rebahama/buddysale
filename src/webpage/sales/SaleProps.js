@@ -9,7 +9,6 @@ import {
 } from "react-bootstrap";
 import styles from "../../styles/SaleProps.module.css";
 import { axiosRes } from "../../api/axiosDefault";
-import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ByUser from "./ByUser";
 import Button from "react-bootstrap/Button";
