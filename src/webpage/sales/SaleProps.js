@@ -86,6 +86,15 @@ const SaleProps = (props) => {
     } catch (err) {}
   };
 
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/posts/${id}/`);
+      alert("Your review have been successfully deleted");
+      navigate("/sales");
+    } catch (err) {
+    }
+  };
+
   const loggedinFavorite = (
     <>
       {favorite_id ? (
@@ -162,14 +171,15 @@ const SaleProps = (props) => {
                 variant="dark"
                 title="View"
               >
-                <Dropdown.Item href="#/action-1">
-                  Delete
+                <Dropdown.Item>
+                
                   <i
+                    onClick={handleDelete}
                     className={`fas fa-solid fa-trash ${styles.EditDeleteBtn}`}
                   ></i>
                 </Dropdown.Item>
                 <Dropdown.Item href="#/action-2">
-                  Edit
+
                   <i className={`fas fa-solid fa-pen ${styles.EditDeleteBtn}`}>
                   </i>
                 </Dropdown.Item>
