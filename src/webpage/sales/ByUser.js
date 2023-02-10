@@ -55,7 +55,8 @@ const ByUser = (props) => {
   return (
     <div>
       
-      <Button onClick={categoryShow}> Show all sales from user</Button>
+      <h3> Click the arrow to show more ads from the same user</h3>
+      <i className={`fas fa-solid fa-arrow-down ${styles.ArrowShow}`} onClick={categoryShow} ></i>
       <div id="saleShow" className={styles.hideUserSales}>
         {sale.results.map((sale) => {
           return <FilterProps key={sale.id} {...sale} />;

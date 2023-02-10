@@ -28,26 +28,33 @@
   font-size: 20px;
   cursor: pointer;
 }
-.FavoriteAd:hover{
+.FavoriteAd:hover {
   color: yellow;
 }
-.LinkStyle{
+.LinkStyle {
   font-size: 20px;
   text-decoration: none;
   color: black;
 }
-.LinkStyle:hover{
+.LinkStyle:hover {
   color: grey;
 }
-.SearchBar{
+.SearchBar {
   margin-top: 1%;
   border-radius: 100px;
   box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
   display: flex;
 }
-.SymBolHover:hover{
+.SymBolHover:hover {
   color: aqua;
   cursor: pointer;
   font-size: 30px;
 }
-
+.ArrowShow:hover {
+  color: aqua;
+  cursor: pointer;
+  font-size: 30px;
+}
+.ArrowShow {
+  margin-bottom: 10%;
+}
