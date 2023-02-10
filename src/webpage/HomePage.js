@@ -90,6 +90,28 @@ const HomePage = () => {
         </Col>
         
       </Row>
+
+
+      <Row md={12} className={styles.Footer}>
+        <Col>
+          <div>
+            <ul>
+              <li className={styles.BlackBtn}>
+                Easy <i className="fas fa-solid fa-check"></i>
+              </li>
+              <li className={styles.BlackBtn}>
+                Free <i className="fas fa-solid fa-star"> </i>
+              </li>
+
+              <li className={styles.BlackBtn}>
+                Fast <i className="fas fa-solid fa-forward"> </i>
+              </li>
+            </ul>
+         
+          </div>
+        </Col>
+        
+      </Row>
       
     </Container>
     
