@@ -59,18 +59,18 @@ const FilterProps = (props) => {
           <div className={styles.InfoContianer}>
             <p> Category: {category_name}</p>
             <p> Price: {price}</p>
+            <p>{message}</p>
             <Link
               to={`/sales/${id}`}
               className={styles.ViewBtn}
               onClick={showId}
             >
               View more
-              
             </Link>
-            <p>{message}</p>
           </div>
-         
+        
         </Col>
+        
       </Row>
     </Container>
   );

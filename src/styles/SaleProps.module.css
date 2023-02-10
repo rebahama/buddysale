@@ -58,3 +58,11 @@
 .ArrowShow {
   margin-bottom: 10%;
 }
+.EditDeleteBtn {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.EditDeleteBtn:hover {
+  color: aqua;
+}
