@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Carousel, Col, Container, Row } from "react-bootstrap";
+import {
+  Carousel,
+  Col,
+  Container,
+  DropdownButton,
+  Dropdown,
+  Row,
+} from "react-bootstrap";
 import styles from "../../styles/SaleProps.module.css";
 import { axiosRes } from "../../api/axiosDefault";
 import { Link } from "react-router-dom";
@@ -151,8 +158,24 @@ const SaleProps = (props) => {
                 className={styles.ProfileImage}
               />
 
-              <i className={`fas fa-solid fa-list-ul ${styles.EditDeleteBtn}`}></i>
-             
+              <DropdownButton
+                id="dropdown-basic-button"
+                variant="dark"
+                title="View"
+              >
+                <Dropdown.Item href="#/action-1">
+                  Delete
+                  <i
+                    className={`fas fa-solid fa-trash ${styles.EditDeleteBtn}`}
+                  ></i>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-2">
+                  Edit
+                  <i className={`fas fa-solid fa-pen ${styles.EditDeleteBtn}`}>
+                  </i>
+                </Dropdown.Item>
+              </DropdownButton>
+
               <p> Seller: {owner_name}</p>
 
               <p> Member since: {created_at}</p>
