@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
+import styles from "../../styles/LogInPage.module.css"
 import { useState } from "react";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Alert, Button, Form } from "react-bootstrap";
+import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
 
 function CreateSale() {
@@ -107,150 +108,164 @@ function CreateSale() {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label> Title </Form.Label>
-          <Form.Control
-            type="text"
-            name="title"
-            placeholder="Enter title"
-            value={title}
-            onChange={handleSale}
-          />
-        </Form.Group>
-        {error?.title?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+      <Container className={styles.CenterForm}>
+        <Row md={12}>
+          <Col md={12}>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group>
+                <Form.Label> Title </Form.Label>
+                <Form.Control
+                  type="text"
+                  name="title"
+                  placeholder="Enter title"
+                  value={title}
+                  onChange={handleSale}
+                  className={styles.InputLogIn}
+                />
+              </Form.Group>
+              {error?.title?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Form.Group>
-          <Form.Label> Body content </Form.Label>
-          <Form.Control
-            as="textarea"
-            name="content"
-            value={content}
-            onChange={handleSale}
-          ></Form.Control>
-        </Form.Group>
+              <Form.Group>
+                <Form.Label> Body content </Form.Label>
+                <Form.Control
+                  as="textarea"
+                  name="content"
+                  value={content}
+                  onChange={handleSale}
+                  className={styles.InputLogIn}
+                ></Form.Control>
+              </Form.Group>
 
-        {error?.content?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+              {error?.content?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Form.Group>
-          <Form.Label>Price</Form.Label>
-          <Form.Control
-            type="number"
-            placeholder="Enter price"
-            name="price"
-            value={price}
-            onChange={handleSale}
-            min="0"
-            max="1000000"
-          />
-        </Form.Group>
-        {error?.price?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+              <Form.Group>
+                <Form.Label>Price</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter price"
+                  name="price"
+                  value={price}
+                  onChange={handleSale}
+                  min="0"
+                  max="1000000"
+                  className={styles.InputLogIn}
+                />
+              </Form.Group>
+              {error?.price?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Form.Label> multiple upload </Form.Label>
-        <input
-          type="file"
-          id="image-upload-multiple"
-          onChange={handleUploadedImages}
-          ref={uploadedImage}
-          multiple
-          accept="image/*"
-        ></input>
+              <Form.Label> multiple upload </Form.Label>
+              <input
+                type="file"
+                id="image-upload-multiple"
+                onChange={handleUploadedImages}
+                ref={uploadedImage}
+                multiple
+                accept="image/*"
+                
+              ></input>
 
-        <Form.Group>
-          <Form.Label>Category</Form.Label>
-          <Form.Control
-            as="select"
-            name="category"
-            value={category}
-            onChange={handleSale}
-          >
-            <option> </option>
-            <option value={electronics}>Electronics </option>
-            <option value={cars}>Cars</option>
-            <option value={clothes}> Clothes </option>
-            <option value={hobby}> Hobby </option>
-            <option value={furniture}> Furniture</option>
-          </Form.Control>
-        </Form.Group>
-        {error?.category?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+              <Form.Group>
+                <Form.Label>Category</Form.Label>
+                <Form.Control
+                  as="select"
+                  name="category"
+                  value={category}
+                  onChange={handleSale}
+                  className={styles.InputLogIn}
+                >
+                  <option> </option>
+                  <option value={electronics}>Electronics </option>
+                  <option value={cars}>Cars</option>
+                  <option value={clothes}> Clothes </option>
+                  <option value={hobby}> Hobby </option>
+                  <option value={furniture}> Furniture</option>
+                </Form.Control>
+              </Form.Group>
+              {error?.category?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Form.Group>
-          <Form.Label>City</Form.Label>
-          <Form.Control
-            as="select"
-            name="city"
-            value={city}
-            onChange={handleSale}
-          >
-            <option> </option>
-            <option value={stockholm}> Stockholm </option>
-            <option value={uppsala}> Uppsala </option>
-          </Form.Control>
-        </Form.Group>
-        {error?.category?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+              <Form.Group>
+                <Form.Label>City</Form.Label>
+                <Form.Control
+                  as="select"
+                  name="city"
+                  value={city}
+                  onChange={handleSale}
+                  className={styles.InputLogIn}
+                >
+                  <option> </option>
+                  <option value={stockholm}> Stockholm </option>
+                  <option value={uppsala}> Uppsala </option>
+                </Form.Control>
+              </Form.Group>
+              {error?.category?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Form.Group>
-          <Form.Label>Phone number</Form.Label>
+              <Form.Group>
+                <Form.Label>Phone number</Form.Label>
 
-          <Form.Group>
-            <Form.Label>Price</Form.Label>
-            <Form.Control
-              type="number"
-              placeholder="Enter phone"
-              name="phone_number"
-              value={phone_number}
-              onChange={handleSale}
-              min="0"
-              max="1000000"
-            />
-          </Form.Group>
-        </Form.Group>
-        {error?.phone_number?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+                <Form.Group>
+                  <Form.Label>Price</Form.Label>
+                  <Form.Control
+                    type="number"
+                    placeholder="Enter phone"
+                    name="phone_number"
+                    value={phone_number}
+                    onChange={handleSale}
+                    min="0"
+                    max="1000000"
+                    className={styles.InputLogIn}
+                  />
+                </Form.Group>
+              </Form.Group>
+              {error?.phone_number?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Form.Group>
-          <Form.Label> Title </Form.Label>
-          <Form.Control
-            type="text"
-            name="email"
-            placeholder="Enter email"
-            value={email}
-            onChange={handleSale}
-          />
-        </Form.Group>
-        {error?.email?.map((message, idx) => (
-          <Alert variant="warning" key={idx}>
-            {message}
-          </Alert>
-        ))}
+              <Form.Group>
+                <Form.Label> Title </Form.Label>
+                <Form.Control
+                  type="text"
+                  name="email"
+                  placeholder="Enter email"
+                  value={email}
+                  onChange={handleSale}
+                  className={styles.InputLogIn}
+                />
+              </Form.Group>
+              {error?.email?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
-        <Button variant="primary" type="submit">
-          Create review
-        </Button>
-      </Form>
+              <Button variant="primary" type="submit"  className={styles.LoginBtn}>
+                Create review
+              </Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
