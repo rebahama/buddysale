@@ -103,7 +103,7 @@ const SaleProps = (props) => {
             className={`fas fa-solid fa-trash ${styles.EditDeleteBtn}`}
           ></i>
         </Dropdown.Item>
-        <Dropdown.Item href="#/action-2">
+        <Dropdown.Item href={`/sales/${id}/edit`}>
           <i className={`fas fa-solid fa-pen ${styles.EditDeleteBtn}`}></i>
         </Dropdown.Item>
       </DropdownButton>

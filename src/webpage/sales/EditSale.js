@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
-import { useNavigate } from "react-router-dom";
-import { Navigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
+
 
 const EditSale = () => {
   const currentUser = useCurrentUser();
@@ -82,7 +82,7 @@ const EditSale = () => {
               phone_number,
               image,
             })
-          : navigate(0);
+          : navigate("/");
       } catch (err) {
         console.log(err);
       }
@@ -130,13 +130,15 @@ const EditSale = () => {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("price", price);
-    uploaded_images.forEach((file) => formData.append("uploaded_images", file));
+   
     formData.append("category", category);
     formData.append("city", city);
     formData.append("email", email);
     formData.append("owner", currentUser.profile_id);
     formData.append("phone_number", phone_number);
-
+if(uploaded_images?.length){
+    uploaded_images.forEach((file) => formData.append("uploaded_images", file));
+}
     
     try {
       await axiosReq.put(`/posts/${id}/`, formData);
