@@ -15,6 +15,7 @@ import MySales from "./webpage/sales/MySales";
 import CityFilter from "./webpage/sales/CityFilter";
 import FavoritesList from "./webpage/sales/FavoritesList";
 import ByUser from "./webpage/sales/ByUser";
+import EditSale from "./webpage/sales/EditSale";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="createaccount" element={<CreateAccount />} />
         <Route exact path="createsale" element={<CreateSale />} />
+        <Route exact path="sales/:id/edit" element={<EditSale />} />
         <Route exact path="login" element={<SignIn />} />
         <Route exact path="sales" element={<SalePage />} />
         <Route exact path="/sales/category" element={<Category />} />
