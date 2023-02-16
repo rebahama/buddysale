@@ -73,6 +73,15 @@
   align-items: center;
 }
 .Footer{
-  background-color: gray;
-  height: 500px;
+  background-color:#0d6efd;
+  height: 150px;
+}
+.FooterContent{
+  margin-top: 5%;
+  list-style: none;
+  text-align: left;
+}
+.FooterLine {
+  color: #f4f4f4;
+  opacity: 1;
 }

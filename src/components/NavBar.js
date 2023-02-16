@@ -38,7 +38,7 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   return (
     <>
-      <Navbar bg="dark" variant="dark" className={`${styles.Links}`}>
+      <Navbar bg="primary" variant="dark" className={`${styles.Links}`}>
         <Container className={styles.all}>
           <NavLink to="/">
             <Navbar.Brand>Navbar</Navbar.Brand>
