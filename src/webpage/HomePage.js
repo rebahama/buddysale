@@ -1,21 +1,28 @@
 import React from "react";
 import styles from "../styles/HomePage.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import pic from "../assets/good.jpg";
 import review from "../assets/review.jpg";
 import laptop from "../assets/laptop.jpg";
-import { Button, Carousel, Col, Container, Row } from "react-bootstrap";
-import Footer from "../components/Footer";
+import { Alert, Carousel, Col, Container, Row } from "react-bootstrap";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const HomePage = () => {
+  const currentUser = useCurrentUser();
+
+  const loggedIn = (
+    <>
+   <Alert variant="primary"> Welcome {currentUser?.username} <Link  className ={styles.LinkColorName} to="/createsale"> click here to create a sale. </Link></Alert>:
+    </>
+  );
   return (
     <Container fluid>
       <Row md={12}>
+        {currentUser ? loggedIn : ""}
         <Col className={styles.CityImage}>
           <h1 className={styles.IntroText}>
             Buddysale The fast way to start selling your item!
           </h1>
-
           <h2 className={styles.IntroText}> Click here to create account </h2>
           <Link className={styles.IntroBtn} to="createaccount">
             Click here

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import styles from "../../styles/LogInPage.module.css"
+import styles from "../../styles/LogInPage.module.css";
 import { useState } from "react";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
@@ -173,7 +173,6 @@ function CreateSale() {
                 ref={uploadedImage}
                 multiple
                 accept="image/*"
-                
               ></input>
 
               <Form.Group>
@@ -259,7 +258,11 @@ function CreateSale() {
                 </Alert>
               ))}
 
-              <Button variant="primary" type="submit"  className={styles.LoginBtn}>
+              <Button
+                variant="primary"
+                type="submit"
+                className={styles.LoginBtn}
+              >
                 Create review
               </Button>
             </Form>

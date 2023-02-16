@@ -41,7 +41,7 @@ const NavBar = () => {
       <Navbar bg="primary" variant="dark" className={`${styles.Links}`}>
         <Container className={styles.all}>
           <NavLink to="/">
-            <Navbar.Brand>Navbar</Navbar.Brand>
+            <Navbar.Brand>Buddysale</Navbar.Brand>
           </NavLink>
           <Nav className="me-auto"> <NavLink to="/"> <i className="fas fa-home"> Home</i> </NavLink>
 
@@ -50,11 +50,7 @@ const NavBar = () => {
             <NavLink to="sales"> <i className="fas fa-solid fa-money-bill"> SaleAds</i> </NavLink>
             <NavLink to="sales/category"> <i className="fas fa-solid fa-bars"> Category</i>  </NavLink>
 
-            {currentUser ? (
-              <p> {currentUser?.username} </p>
-            ) : (
-              currentUser?.username
-            )}
+           
           </Nav>
         </Container>
       </Navbar>
