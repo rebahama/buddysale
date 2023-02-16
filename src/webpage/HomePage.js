@@ -97,9 +97,6 @@ const HomePage = () => {
                 <i className="fas fa-regular fa-copyright"></i>
                 2023 Rebas
               </li>
-              
-
-            
             </ul>
           </div>
         </Col>

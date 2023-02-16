@@ -91,9 +91,24 @@ const SaleProps = (props) => {
       await axiosRes.delete(`/posts/${id}/`);
       alert("Your review have been successfully deleted");
       navigate("/sales");
-    } catch (err) {
-    }
+    } catch (err) {}
   };
+
+  const RealLoggedIn = (
+    <>
+      <DropdownButton id="dropdown-basic-button" variant="dark" title="View">
+        <Dropdown.Item>
+          <i
+            onClick={handleDelete}
+            className={`fas fa-solid fa-trash ${styles.EditDeleteBtn}`}
+          ></i>
+        </Dropdown.Item>
+        <Dropdown.Item href="#/action-2">
+          <i className={`fas fa-solid fa-pen ${styles.EditDeleteBtn}`}></i>
+        </Dropdown.Item>
+      </DropdownButton>
+    </>
+  );
 
   const loggedinFavorite = (
     <>
@@ -166,24 +181,7 @@ const SaleProps = (props) => {
                 className={styles.ProfileImage}
               />
 
-              <DropdownButton
-                id="dropdown-basic-button"
-                variant="dark"
-                title="View"
-              >
-                <Dropdown.Item>
-                
-                  <i
-                    onClick={handleDelete}
-                    className={`fas fa-solid fa-trash ${styles.EditDeleteBtn}`}
-                  ></i>
-                </Dropdown.Item>
-                <Dropdown.Item href="#/action-2">
-
-                  <i className={`fas fa-solid fa-pen ${styles.EditDeleteBtn}`}>
-                  </i>
-                </Dropdown.Item>
-              </DropdownButton>
+              {is_owner && RealLoggedIn}
 
               <p> Seller: {owner_name}</p>
 
