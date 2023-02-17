@@ -24,18 +24,18 @@ function App() {
       <div className="AppContainer">
       <Routes>
         <Route exact path="/" element={<HomePage />} />
-        <Route exact path="createaccount" element={<CreateAccount />} />
-        <Route exact path="createsale" element={<CreateSale />} />
-        <Route exact path="sales/:id/edit" element={<EditSale />} />
-        <Route exact path="login" element={<SignIn />} />
-        <Route exact path="sales" element={<SalePage />} />
+        <Route exact path="/createaccount" element={<CreateAccount />} />
+        <Route exact path="/createsale" element={<CreateSale />} />
+        <Route exact path="/sales/:id/edit" element={<EditSale />} />
+        <Route exact path="/login" element={<SignIn />} />
+        <Route exact path="/sales" element={<SalePage />} />
         <Route exact path="/sales/category" element={<Category />} />
-        <Route exact path="sales/:id" element={<DetaliedSale/>}/>
-        <Route exact path="sales/category/:id" element={<CategoryShow/>}/>
-        <Route exact path="mysales" element={<MySales />} />
-        <Route exact path="sales/citys" element={<CityFilter />} />
-        <Route exact path="favorites" element={<FavoritesList />} />
-        <Route exact path="sales/:id/byuser" element={<ByUser />} />
+        <Route exact path="/sales/:id" element={<DetaliedSale/>}/>
+        <Route exact path="/sales/category/:id" element={<CategoryShow/>}/>
+        <Route exact path="/mysales" element={<MySales />} />
+        <Route exact path="/sales/citys" element={<CityFilter />} />
+        <Route exact path="/favorites" element={<FavoritesList />} />
+        <Route exact path="/sales/:id/byuser" element={<ByUser />} />
       </Routes>
       </div>
       
