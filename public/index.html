@@ -32,6 +32,12 @@
       crossorigin="anonymous"
     ></script>
 
+    <script>
+      const webSocketUrl = `wss://${window.location.hostname}:${window.location.port}/ws`;
+      const socket = new WebSocket(webSocketUrl);
+      // Your WebSocket code here...
+    </script>
+
     <title>React App</title>
   </head>
   <body>
