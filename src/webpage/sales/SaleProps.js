@@ -195,7 +195,7 @@ const SaleProps = (props) => {
                 </Modal.Header>
                 <Modal.Body> {message}</Modal.Body>
                 <Modal.Footer>
-                  <Button> Ok</Button>
+                 
                 </Modal.Footer>
               </Modal>
             </div>
