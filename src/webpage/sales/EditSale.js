@@ -35,6 +35,7 @@ const EditSale = () => {
     city,
     uploaded_images,
     email,
+    images,
     phone_number,
     image,
   } = createSale;
@@ -67,6 +68,7 @@ const EditSale = () => {
           email,
           phone_number,
           image,
+          images,
           is_owner,
         } = data;
 
@@ -81,6 +83,7 @@ const EditSale = () => {
               email,
               phone_number,
               image,
+              images
             })
           : navigate("/");
       } catch (err) {
@@ -119,7 +122,7 @@ const EditSale = () => {
       });
     }
   };
-
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (uploaded_images?.length > 3) {
@@ -130,15 +133,16 @@ const EditSale = () => {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("price", price);
-   
+
     formData.append("category", category);
     formData.append("city", city);
     formData.append("email", email);
     formData.append("owner", currentUser.profile_id);
     formData.append("phone_number", phone_number);
-if(uploaded_images?.length){
+
     uploaded_images.forEach((file) => formData.append("uploaded_images", file));
-}
+    
+
     
     try {
       await axiosReq.put(`/posts/${id}/`, formData);
@@ -219,6 +223,16 @@ if(uploaded_images?.length){
                 multiple
                 accept="image/*"
               ></input>
+<p> ss</p>
+{images?.map((image, index)=>{
+   
+  return <div key={index}>
+   <img
+     src={image.image}
+     alt="user uploads"
+   />
+   </div>
+})}
 
               <Form.Group>
                 <Form.Label>Category</Form.Label>
