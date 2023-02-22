@@ -22,38 +22,70 @@ const NavBar = () => {
 
   const loggedIn = (
     <>
-      <NavLink to="createsale"> <i className="fas fa-solid fa-plus"> </i> Create a sale</NavLink>
-      <NavLink to="/" onClick={handleLogOut}> <i className="fas fa-solid fa-arrow-right-from-bracket"> </i> Log out </NavLink>
-      
+      <NavLink to="createsale">
+        {" "}
+        <i className="fas fa-solid fa-plus"> </i> Create a sale
+      </NavLink>
+      <NavLink to="/" onClick={handleLogOut}>
+        {" "}
+        <i className="fas fa-solid fa-arrow-right-from-bracket"> </i> Log out{" "}
+      </NavLink>
+
       <NavLink to="mysales"> My sales</NavLink>
-      <NavLink to="favorites"> <i className="fas fa-solid fa-star"> </i> Saved ads </NavLink>
+      <NavLink to="favorites">
+        {" "}
+        <i className="fas fa-solid fa-star"> </i> Saved ads{" "}
+      </NavLink>
     </>
   );
   const loggedOut = (
     <>
-      <NavLink to="login"> <i className="fas fa-sign-in-alt"> </i> Log in </NavLink>
-      <NavLink to="createaccount"> <i className="fas fa-user-plus"> </i> Create account </NavLink>
+      <NavLink to="login">
+        {" "}
+        <i className="fas fa-sign-in-alt"> </i> Log in{" "}
+      </NavLink>
+      <NavLink to="createaccount">
+        {" "}
+        <i className="fas fa-user-plus"> </i> Create account{" "}
+      </NavLink>
     </>
   );
   const currentUser = useCurrentUser();
   return (
     <>
-      <Navbar bg="primary" variant="dark" className={`${styles.Links}`}>
+      <Navbar
+        bg="primary"
+        variant="dark"
+        expand="lg"
+        className={`${styles.Links}`}
+      >
         <Container className={styles.all}>
           <NavLink to="/">
             <Navbar.Brand>Buddysale</Navbar.Brand>
           </NavLink>
-          <Nav className="me-auto"> <NavLink to="/"> <i className="fas fa-home"> </i> Home </NavLink>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
 
-            {currentUser ? loggedIn : loggedOut}
+              <NavLink to="/">
 
-            <NavLink to="sales"> <i className="fas fa-solid fa-money-bill"> </i> SaleAds </NavLink>
-            <NavLink to="sales/category"> <i className="fas fa-solid fa-bars"> </i> Category  </NavLink>
+                <i className="fas fa-home"> </i> Home
+              </NavLink>
+              {currentUser ? loggedIn : loggedOut}
+              <NavLink to="sales">
 
-           
-          </Nav>
+                <i className="fas fa-solid fa-money-bill"> </i> SaleAds
+              </NavLink>
+              <NavLink to="sales/category">
+
+                <i className="fas fa-solid fa-bars"> </i> Category
+              </NavLink>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      
     </>
   );
 };
