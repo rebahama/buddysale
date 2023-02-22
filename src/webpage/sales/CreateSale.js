@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
+import { Link } from "react-router-dom";
 
 function CreateSale() {
   const currentUser = useCurrentUser();
@@ -18,6 +19,8 @@ function CreateSale() {
     category: 1,
     city: 1,
   });
+
+  const [createMessage, setCreateMesssage] = useState("");
 
   const [citys] = useState({
     stockholm: 1,
@@ -37,6 +40,7 @@ function CreateSale() {
   } = createSale;
   const [error, setError] = useState({});
   const imageInput = useRef(null);
+
   const uploadedImage = useRef(null);
 
   const [categorySub] = useState({
@@ -97,6 +101,8 @@ function CreateSale() {
     formData.append("phone_number", phone_number);
     try {
       const { data } = await axiosReq.post("/posts/", formData);
+      setCreateMesssage("Your ad have been created, check it out here!");
+
       console.log(data);
     } catch (err) {
       if (err.response?.data !== 401) {
@@ -265,6 +271,7 @@ function CreateSale() {
               >
                 Create review
               </Button>
+              <Link to="/mysales"> {createMessage}</Link>
             </Form>
           </Col>
         </Row>

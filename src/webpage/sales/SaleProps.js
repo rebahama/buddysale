@@ -189,13 +189,14 @@ const SaleProps = (props) => {
 
               {currentUser ? loggedinFavorite : "log in to save ad"}
 
-              <Modal show={show} onHide={handleClose}>
+              <Modal show={show} onHide={handleClose} onClick={updatePage}>
                 <Modal.Header closeButton>
                   <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
                 <Modal.Body> {message}</Modal.Body>
+               
                 <Modal.Footer>
-                 
+                <Button> Ok </Button>
                 </Modal.Footer>
               </Modal>
             </div>
