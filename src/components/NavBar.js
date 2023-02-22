@@ -23,17 +23,14 @@ const NavBar = () => {
   const loggedIn = (
     <>
       <NavLink to="createsale">
-        {" "}
         <i className="fas fa-solid fa-plus"> </i> Create a sale
       </NavLink>
       <NavLink to="/" onClick={handleLogOut}>
-        {" "}
         <i className="fas fa-solid fa-arrow-right-from-bracket"> </i> Log out{" "}
       </NavLink>
 
       <NavLink to="mysales"> My sales</NavLink>
       <NavLink to="favorites">
-        {" "}
         <i className="fas fa-solid fa-star"> </i> Saved ads{" "}
       </NavLink>
     </>
@@ -41,7 +38,6 @@ const NavBar = () => {
   const loggedOut = (
     <>
       <NavLink to="login">
-        {" "}
         <i className="fas fa-sign-in-alt"> </i> Log in{" "}
       </NavLink>
       <NavLink to="createaccount">
