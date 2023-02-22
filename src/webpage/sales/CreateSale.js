@@ -248,9 +248,9 @@ function CreateSale() {
               ))}
 
               <Form.Group>
-                <Form.Label> Title </Form.Label>
+                <Form.Label> Email </Form.Label>
                 <Form.Control
-                  type="text"
+                  type="email"
                   name="email"
                   placeholder="Enter email"
                   value={email}
@@ -269,7 +269,7 @@ function CreateSale() {
                 type="submit"
                 className={styles.LoginBtn}
               >
-                Create review
+                Create Ad
               </Button>
               <Link to="/mysales"> {createMessage}</Link>
             </Form>
