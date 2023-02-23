@@ -11,8 +11,7 @@
   box-shadow: 0 10px 16px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
 }
 .ImgContainer {
-  max-width: 80%;
-  max-height: 50%;
+  height: 50%;
   border-radius: 50%;
 }
 .InfoContianer {
