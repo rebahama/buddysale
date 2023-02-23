@@ -23,7 +23,7 @@ const FilterProps = (props) => {
   return (
     <Container>
       <Row>
-        <Col className={`${styles.FlexContainer} offset-md-3`} md={6}>
+        <Col className={`${styles.FlexContainer} offset-md-3 offset-sm-3`} md={6} sm={6} xs={12}>
           <div>
             <span className={styles.DateSize}> {created_at}</span>
 
@@ -54,6 +54,7 @@ const FilterProps = (props) => {
 
             <p> {title}</p>
           </div>
+
 
           <div className={styles.InfoContianer}>
             <p> Category: {category_name}</p>

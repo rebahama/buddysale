@@ -48,3 +48,13 @@
 .ViewBtn:hover {
   color: aqua;
 }
+
+@media screen and (max-width: 770px) {
+  .FlexContainer{
+    display: flex;
+    justify-content: center;
+  }
+  .ImgContainer{
+    height: 35%;
+  }
+ }
