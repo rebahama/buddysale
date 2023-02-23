@@ -18,12 +18,20 @@ const SalePage = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [price, setPrice] = useState("");
 
+  const priceOrder = () => {
+    setPrice("price");
+  };
+
+  const priceHighOrder =()=>{
+    setPrice("-price")
+  }
   useEffect(() => {
     const handleData = async () => {
       try {
         const { data } = await axiosReq.get(
-          `https://buddy-sale.herokuapp.com/posts/?search=${query}`
+          `https://buddy-sale.herokuapp.com/posts/?ordering=${price}&search=${query}`
         );
         setSale(data);
         loadedcomplete(true);
@@ -34,37 +42,55 @@ const SalePage = () => {
     };
     loadedcomplete(false);
     handleData();
-  }, [query]);
+  }, [query,price]);
 
   return (
     <div>
       total ads :{sale.results.length}
       <Container>
-      <Row md={12}>
-        <Col>
-      <Form onSubmit={(event) => event.preventDefault()}>
-        <Form.Control
-          type="text"
-          placeholder="Search ad"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          className={styles.SearchBar}
-        />
-      </Form>
-      <i className={`fa fa-solid fa-sort ${styles.SymBolHover}`} onClick={handleShow}></i>
-      </Col>
-      </Row>
-      
-    </Container>
-      
+        <Row md={12}>
+          <Col>
+            <Form onSubmit={(event) => event.preventDefault()}>
+              <Form.Control
+                type="text"
+                placeholder="Search ad"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                className={styles.SearchBar}
+              />
+            </Form>
+            <i
+              className={`fa fa-solid fa-sort ${styles.SymBolHover}`}
+              onClick={handleShow}
+            ></i>
+
+          </Col>
+        </Row>
+      </Container>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title> Filter</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Link to="citys" className={styles.LinkStyle}> <i className="fas fa-solid fa-city"> </i> <span> City </span> </Link>
+          <Link to="citys" className={styles.LinkStyle}>
+            <i className="fas fa-solid fa-city"> </i> <span> City </span>
+          </Link>
           <p>
-            <Link to="category" className={styles.LinkStyle}> <i className="fas fa-solid fa-bars">  </i> <span> Category </span> </Link>
+            <Link to="category" className={styles.LinkStyle}>
+              <i className="fas fa-solid fa-bars"> </i> <span> Category </span>
+            </Link>
+          </p>
+
+          <p>
+          <Link onClick={priceOrder}>
+              Sort
+            </Link> <span> from lowest to highest</span>
+          </p>
+
+          <p>
+          <Link onClick={priceHighOrder}>
+              Sort
+            </Link> <span> from highest to lowest</span>
           </p>
         </Modal.Body>
         <Modal.Footer>
