@@ -136,7 +136,7 @@ function CreateSale() {
               ))}
 
               <Form.Group>
-                <Form.Label> Body content </Form.Label>
+                <Form.Label> Describe product </Form.Label>
                 <Form.Control
                   as="textarea"
                   name="content"
@@ -171,7 +171,7 @@ function CreateSale() {
                 </Alert>
               ))}
 
-              <Form.Label> multiple upload </Form.Label>
+              <Form.Label> Upload pictures </Form.Label>
               <input
                 type="file"
                 id="image-upload-multiple"
@@ -190,7 +190,7 @@ function CreateSale() {
                   onChange={handleSale}
                   className={styles.InputLogIn}
                 >
-                  <option> </option>
+                 
                   <option value={electronics}>Electronics </option>
                   <option value={cars}>Cars</option>
                   <option value={clothes}> Clothes </option>
@@ -213,7 +213,7 @@ function CreateSale() {
                   onChange={handleSale}
                   className={styles.InputLogIn}
                 >
-                  <option> </option>
+                 
                   <option value={stockholm}> Stockholm </option>
                   <option value={uppsala}> Uppsala </option>
                 </Form.Control>
@@ -225,10 +225,10 @@ function CreateSale() {
               ))}
 
               <Form.Group>
-                <Form.Label>Phone number</Form.Label>
+               
 
                 <Form.Group>
-                  <Form.Label>Price</Form.Label>
+                  <Form.Label>Phone number</Form.Label>
                   <Form.Control
                     type="number"
                     placeholder="Enter phone"
