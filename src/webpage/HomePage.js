@@ -12,7 +12,24 @@ const HomePage = () => {
 
   const loggedIn = (
     <>
-   <Alert variant="primary"> Welcome {currentUser?.username} <Link  className ={styles.LinkColorName} to="/createsale"> click here to create a sale. </Link></Alert>:
+      <Alert variant="primary">
+        {" "}
+        Welcome {currentUser?.username}{" "}
+        <Link className={styles.LinkColorName} to="/createsale">
+          {" "}
+          click here to create a sale.{" "}
+        </Link>
+      </Alert>
+      :
+    </>
+  );
+
+  const createAccount = (
+    <>
+      <h2 className={styles.IntroText}> Click here to create account </h2>
+      <Link className={styles.IntroBtn} to="createaccount">
+        Click here
+      </Link>
     </>
   );
   return (
@@ -23,10 +40,7 @@ const HomePage = () => {
           <h1 className={styles.IntroText}>
             Buddysale The fast way to start selling your item!
           </h1>
-          <h2 className={styles.IntroText}> Click here to create account </h2>
-          <Link className={styles.IntroBtn} to="createaccount">
-            Click here
-          </Link>
+          {currentUser ? "" : createAccount}
         </Col>
       </Row>
 
