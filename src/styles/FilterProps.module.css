@@ -53,8 +53,15 @@
   .FlexContainer{
     display: flex;
     justify-content: center;
+    height: 150px;
   }
   .ImgContainer{
     height: 35%;
+  }
+  .InfoContianer{
+    padding: 10px;
+  }
+  .ViewBtn{
+    padding: 0;
   }
  }

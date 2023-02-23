@@ -47,6 +47,7 @@ const FilterProps = (props) => {
                     src={image.image}
                     alt="user uploads"
                     className={styles.ImgContainer}
+                    height="400"
                   />
                 ))}
               </>
