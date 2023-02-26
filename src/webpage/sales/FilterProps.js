@@ -22,9 +22,13 @@ const FilterProps = (props) => {
 
   return (
     <Container>
+       
       <Row>
+        
         <Col className={`${styles.FlexContainer} offset-md-3 offset-sm-3`} md={6} sm={6} xs={12}>
+        
           <div>
+          
             <span className={styles.DateSize}> {created_at}</span>
 
             <p className={styles.DateSize}> {city_name}</p>
@@ -52,8 +56,10 @@ const FilterProps = (props) => {
                 ))}
               </>
             )}
-
+<Link to={`/sales/${id}`} onClick={showId} className={styles.ViewBtn }>
+  
             <p> {title}</p>
+            </Link>
           </div>
 
 
@@ -61,18 +67,15 @@ const FilterProps = (props) => {
             <p> Category: {category_name}</p>
             <p> Price: {price}</p>
             <p>{message}</p>
-            <Link
-              to={`/sales/${id}`}
-              className={styles.ViewBtn}
-              onClick={showId}
-            >
-              View more
-            </Link>
+ 
+            
           </div>
-        
+         
         </Col>
+       
         
       </Row>
+      
     </Container>
   );
 };
