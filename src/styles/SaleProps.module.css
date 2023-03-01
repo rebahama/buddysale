@@ -66,6 +66,10 @@
 .EditDeleteBtn:hover {
   color: aqua;
 }
+.ContentText {
+  font-size: 17px;
+  margin: 50px;
+}
 
 @media screen and (max-width: 770px) {
   .profileInfo {
@@ -73,11 +77,9 @@
     flex-direction: column;
     margin: 20px;
   }
-  .FactContainer{
-
+  .FactContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
- }
+}

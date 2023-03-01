@@ -236,7 +236,7 @@ function CreateSale() {
                     value={phone_number}
                     onChange={handleSale}
                     min="0"
-                    max="1000000"
+                    max="100000000"
                     className={styles.InputLogIn}
                   />
                 </Form.Group>

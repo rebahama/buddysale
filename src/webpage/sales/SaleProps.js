@@ -165,7 +165,6 @@ const SaleProps = (props) => {
   return (
     <div>
       <Container fluid>
-        {images?.length}
         <Carousel>{renderImages()}</Carousel>
       </Container>
 
@@ -204,16 +203,16 @@ const SaleProps = (props) => {
         </Row>
         <hr className={styles.HrLine} />
         <div className={styles.FactContainer}>
-          <h3> Facts:</h3>
+          <h3> Information: </h3>
           <p> Category: {category_name}</p>
-          <p> Price: {price}</p>
+          <p> Price: {price} <i className="fas fa-solid fa-euro-sign"></i> </p> 
           <p> City: {city_name}</p>
           <p> Email: {email}</p>
           <p> Number: {phone_number}</p>
           <p> Created: {created_at}</p>
         </div>
         <hr className={styles.HrLine} />
-        {content}
+        <p className={styles.ContentText}>{content}</p>
         <ByUser owner={owner} />
       </Container>
     </div>
