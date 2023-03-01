@@ -82,4 +82,7 @@
     flex-direction: column;
     align-items: center;
   }
+  .ProfileImage {
+    max-width: 30%;
+  }
 }
