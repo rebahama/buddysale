@@ -104,3 +104,109 @@ Saved ad
 Unsaved ad
 
 ![Website unsaved-add](docs/unsave-ad.png)
+
+## SaleAds page
+Here all the saleadds on the page can be seen in one page, and
+also how many ads with a number is displayed.
+
+![Website unsaved-add](docs/all-ads.png)
+
+You can also filter the city with this function below, when user choose
+the city symbol, another page will appear where user will make a request
+on what city to show the ads, if user picks "stockholm" on the dropdown
+meny only ads with stockholm as city will be shown.
+
+Also user can sort the ads based on the price from lowest to highest or the other way around.
+
+![Website filter-add](docs/filter-ads.png)
+
+
+## Search
+The user can use the search box in the "all reivews" page to serach for, categories,usernames and titles. Here the title have been inputed to the search box and the review is showing up.
+
+![Website search-add](docs/search-ad.png)
+
+## Personal username
+When uesr logs in, a message will appear to show 
+that user is logged in, and user will also be able to click "My sales" page where the user can click on their own personal created ads. That way user can keep track on their own created ads.
+
+
+# Account
+
+## Sign in
+
+This is the sign in page, if the fields are empty a message will be displayed saying that it needs to be inputed by the user.
+
+![Website sign-in](docs/sign-in.png)
+
+## Sign up
+This page the user will be able to create an account, a warning field will be displayed if the user creates a username that exist or password not matching.
+
+![Website sign-up](docs/user-exist.png)
+
+# Technology
+
+* The structure of the webpage was created with HTML5.
+
+* The styling was created with CSS3.
+
+* React Bootstrap version 4.6.0 was used for the styling of this project.
+
+* React version 18.2.0 was used for this project.
+
+* React-router-dom version 5.3.0 is used as navigation and clicking links in the navbar.
+
+* Axios version 0.27.2 is installed to fetch the api endpoints.
+
+* jwt-decode was installed for for decoding the jason web tokens.
+
+
+# Frontend libraries
+* The React frontend library have been used to fetch the api endpoints throughout the application. The navbar that 
+is showing on every link that the user clicks is visable thanks to to React and reuse of the component. The sorting 
+of the page from the highest price to the lowest is achieved with the help of React. The displaying of the most commented and the most
+liked reviews on the page is also displayed with the help of React.
+
+* Styling of the page was used with both CSS3 and Bootstrap. I choose to combine these two technologies for the best user experience.
+If I had only Bootstrap for styling then I would not be able to customize the content, in my opinion it´s good to combine these technologies.
+
+
+
+# API backend endpoint
+The documentation for the backend can be found here [buddy-sale-backend](https://github.com/rebahama/buddy-sale-backend)
+
+
+# Supported screens
+
+* Ipad Air/Ipad Mini.
+
+* Iphone 4/6/7/XR/12 and 12 pro.
+
+* Samsung Galaxy S8/S20.
+
+* Nesthub Max.
+
+
+# Deployment
+
+* When creating the app use the command: npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm
+
+This will install all the libraries that is required for the project with the right versions.
+
+* To install the Heroku prebuild to render onepage application type: "npm install -g serve".
+
+* In Heroku hompage click on "create app".
+
+* After you have created the app then click on "deploy".
+
+* Click on github as deployment method and connect your github account to your Heroku account.
+
+* Click on deploy branch and your app should start be live after a few minutes.
+
+
+# Source code
+1. Go to this [repository](https://github.com/rebahama/buddysale)
+
+2. Click on the green button texted "Gitpod"
+
+3. Type npm start to get the server up and running.
