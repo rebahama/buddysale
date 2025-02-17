@@ -12,7 +12,7 @@ const Footer = () => {
                         <li className="list-inline-item"><a href="https://www.instagram.com/" target="_blank" rel=" noopener noreferrer"><i
                               className="fa-brands fa-instagram"> </i></a> Insta</li>
                         <li className="list-inline-item"><a href="https://twitter.com/?lang=sv" target="_blank" rel="noopener noreferrer"><i
-                              className="fa-brands fa-twitter"> </i></a> Twiiter</li>
+                              className="fa-brands fa-twitter"> </i></a> X </li>
                         <li className="list-inline-item"><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i
                               className="fa-brands fa-linkedin"> </i></a> Linkedin</li>
                             

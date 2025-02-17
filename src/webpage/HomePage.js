@@ -116,7 +116,7 @@ const HomePage = () => {
               <li className={styles.FooterContent}>
                 <hr className={styles.FooterLine} />
                 <i className="fas fa-regular fa-copyright"></i>
-                2023 Rebas
+                2023 Rebaz
               </li>
             </ul>
           </div>
